@@ -3,37 +3,15 @@
 <suite name="Failed suite [MyTestSuite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Whatsapp(failed)">
     <classes>
-      <class name="Whatsapp.header">
-        <methods>
-          <include name="wheaderisselectedasnone"/>
-          <include name="wtextWithoutenteringanytext"/>
-          <include name="wHeaderTextandAddVariablewithselectdapoint"/>
-          <include name="wHeaderTextandAddVariable"/>
-          <include name="wtestWithFallbackValue"/>
-          <include name="setUp"/>
-          <include name="wHeaderTextandAddVariablewithselectdapointandfallbackvalue"/>
-        </methods>
-      </class> <!-- Whatsapp.header -->
       <class name="Whatsapp.body">
         <methods>
           <include name="wselectdatapointandfallbackvalue"/>
-          <include name="wselectdatapoint"/>
-          <include name="waddvariable"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- Whatsapp.body -->
       <class name="Whatsapp.Buttons">
         <methods>
-          <include name="wphonenumberbuttontext"/>
-          <include name="wphonenumber"/>
-          <include name="waddwebsiteurlbuttontext"/>
-          <include name="wquickurl"/>
           <include name="wtestbuttonsclickpn"/>
-          <include name="wtestbuttonsclickwu"/>
-          <include name="waddwebsiteurl"/>
-          <include name="waddwebsiteurlbuttontextcontent"/>
-          <include name="wphonenumberbuttontextcontent"/>
-          <include name="wquickurlbuttontextcontent"/>
           <include name="wtestbuttonsclickqr"/>
           <include name="setUp"/>
         </methods>
@@ -42,31 +20,29 @@
   </test> <!-- Whatsapp(failed) -->
   <test thread-count="5" name="createonfly(failed)">
     <classes>
-      <class name="createonfly.Buttons">
-        <methods>
-          <include name="testbuttonsclickqr"/>
-          <include name="testbuttonsclickpn"/>
-          <include name="testbuttonsclickwu"/>
-          <include name="setUp"/>
-          <include name="quickurlbuttontextcontent"/>
-        </methods>
-      </class> <!-- createonfly.Buttons -->
       <class name="createonfly.body">
         <methods>
           <include name="addvariable"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- createonfly.body -->
-      <class name="createonfly.header">
+      <class name="createonfly.Buttons">
         <methods>
-          <include name="HeaderTextandAddVariable"/>
-          <include name="testWithFallbackValue"/>
-          <include name="textWithoutenteringanytext"/>
-          <include name="HeaderTextandAddVariablewithselectdapointandfallbackvalue"/>
+          <include name="testbuttonsclickqr"/>
+          <include name="testbuttonsclickpn"/>
           <include name="setUp"/>
-          <include name="HeaderTextandAddVariablewithselectdapoint"/>
         </methods>
-      </class> <!-- createonfly.header -->
+      </class> <!-- createonfly.Buttons -->
     </classes>
   </test> <!-- createonfly(failed) -->
+  <test thread-count="5" name="createonfly1.copy(failed)">
+    <classes>
+      <class name="createonfly1.copy.Useexistingclienttags">
+        <methods>
+          <include name="Useexistingclienttags3"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- createonfly1.copy.Useexistingclienttags -->
+    </classes>
+  </test> <!-- createonfly1.copy(failed) -->
 </suite> <!-- Failed suite [MyTestSuite] -->

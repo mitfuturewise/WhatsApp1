@@ -11,6 +11,8 @@ public class wfnp extends Login{
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		driver.findElement(By.xpath("(//span[contains(.,\"WhatsApp\")])[3]")).click();//whatsapp click
 		Thread.sleep(2000);
+		driver.navigate().refresh();
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("//a[contains(.,\"CAMPAIGNS\")]")).click();
 	}
 	@Test

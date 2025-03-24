@@ -13,19 +13,19 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import Whatsapp1.copy.Login;
-import Whatsapp1.copy.TestListeners;
-import Whatsapp1.copy.wfnp;
-import Whatsapp1.copy.whatsapp;
+import Whatsapp.Login;
+import Whatsapp.TestListeners;
+import Whatsapp.wfnp;
+
 @Listeners(TestListeners.class)
 public class newcampaign extends Login{
 	 private static int campaignCounter = 1;
 	 wfnp button = new wfnp();
-	 whatsapp whatsapp=new whatsapp();
 @Test
 public void newCampaign() throws InterruptedException {
 	TestListeners.setDriver(driver);
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+	driver.navigate().refresh();
 	driver.findElement(By.xpath("//span[contains(.,\"New Campaign\")]")).click();//new campaign
 	//enter campaign name
 	if (campaignCounter > 100) {
@@ -73,6 +73,7 @@ public void newCampaign() throws InterruptedException {
  public void Createonfly() throws InterruptedException {
 		TestListeners.setDriver(driver);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		driver.navigate().refresh();
 		driver.findElement(By.xpath("//span[contains(.,\"New Campaign\")]")).click();//new campaign
 		//enter campaign name
 		if (campaignCounter > 100) {
@@ -110,6 +111,7 @@ public void newCampaign() throws InterruptedException {
  public void Useexistingclienttags() throws InterruptedException {
 		TestListeners.setDriver(driver);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		driver.navigate().refresh();
 		driver.findElement(By.xpath("//span[contains(.,\"New Campaign\")]")).click();//new campaign
 		//enter campaign name
 		if (campaignCounter > 100) {
@@ -158,6 +160,7 @@ public void newCampaign() throws InterruptedException {
  public void CreateTag() throws InterruptedException {
 		TestListeners.setDriver(driver);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		driver.navigate().refresh();
 		driver.findElement(By.xpath("//span[contains(.,\"New Campaign\")]")).click();//new campaign
 		//enter campaign name
 		if (campaignCounter > 100) {

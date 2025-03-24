@@ -8,5 +8,10 @@
             <class name="createonfly1.copy.Useexistingclienttags"/>  
         </classes>
     </test>
+    <test name="Whatsapp1.copy">
+        <classes>
+            <class name="Whatsapp1.copy.Useexistingclienttags"/>  
+        </classes>
+    </test>
 
 </suite>
