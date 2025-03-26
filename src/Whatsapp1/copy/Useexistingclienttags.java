@@ -36,7 +36,7 @@ import Whatsapp.newcampaign;
 
 @Listeners(TestListeners.class)
 public class Useexistingclienttags extends Login{
-	newcampaign createcamp = new newcampaign();
+	Whatsapp1.copy.newcampaign createcamp = new Whatsapp1.copy.newcampaign();
 	wfnp wfnp = new wfnp();
 	body body = new body();
 	header header = new header();

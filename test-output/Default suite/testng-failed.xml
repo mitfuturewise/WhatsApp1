@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="createonfly.header">
+      <class name="swiftchat.Create_Template">
         <methods>
-          <include name="HeaderTextandAddVariable"/>
-          <include name="setUp"/>
+          <include name="template"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
         </methods>
-      </class> <!-- createonfly.header -->
+      </class> <!-- swiftchat.Create_Template -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
