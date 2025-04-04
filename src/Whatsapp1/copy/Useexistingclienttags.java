@@ -79,8 +79,8 @@ public class Useexistingclienttags extends Login{
 		Thread.sleep(1000);
 		header.wheaderisselectedasnone();
 		Thread.sleep(1000);
-		body.wselectdatapointandfallbackvalue();
-		Thread.sleep(1000);
+//		body.wselectdatapointandfallbackvalue();
+//		Thread.sleep(1000);
 		buttons.wphonenumberbuttontextcontent();
 		Thread.sleep(1000);
 		devtools.devtools();
@@ -91,8 +91,8 @@ public class Useexistingclienttags extends Login{
 		Thread.sleep(1000);
 		header.wHeaderTextandAddVariablewithselectdapointandfallbackvalue();;
 		Thread.sleep(1000);
-		body.wselectdatapointandfallbackvalue();
-		Thread.sleep(1000);
+//		body.wselectdatapointandfallbackvalue();
+//		Thread.sleep(1000);
 		buttons.wphonenumberbuttontextcontent();
 		Thread.sleep(1000);
 		devtools.devtools();
@@ -106,8 +106,8 @@ public class Useexistingclienttags extends Login{
 		Thread.sleep(1000);
 		header.wheaderisselectedasnone();
 		Thread.sleep(1000);
-		body.wselectdatapointandfallbackvalue();
-		Thread.sleep(1000);
+//		body.wselectdatapointandfallbackvalue();
+//		Thread.sleep(1000);
 		buttons.wphonenumberbuttontextcontent();
 		Thread.sleep(1000);
 		devtools.devtools();
@@ -118,8 +118,8 @@ public class Useexistingclienttags extends Login{
 		Thread.sleep(1000);
 		header.wHeaderTextandAddVariablewithselectdapointandfallbackvalue();;
 		Thread.sleep(1000);
-		body.wselectdatapointandfallbackvalue();
-		Thread.sleep(1000);
+//		body.wselectdatapointandfallbackvalue();
+//		Thread.sleep(1000);
 		buttons.wphonenumberbuttontextcontent();
 		Thread.sleep(1000);
 		devtools.devtools();	

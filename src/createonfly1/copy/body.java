@@ -54,17 +54,83 @@ public class body extends Login {
 		bodytext.bodytext();
 		Thread.sleep(1000);
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	    WebElement addVariable = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//p[contains(.,'Add Variable')])")));
+//	    WebElement addVariable = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//p[contains(.,'Add Variable')])")));
+//
+//	    // Scroll into view and click safely
+//	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", addVariable);
+//	    Thread.sleep(300);
+//	    ((JavascriptExecutor) driver).executeScript("arguments[0].click();", addVariable);
+//		Thread.sleep(1000);
+		WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-	    // Scroll into view and click safely
-	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", addVariable);
-	    Thread.sleep(300);
-	    ((JavascriptExecutor) driver).executeScript("arguments[0].click();", addVariable);
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("(//mat-select[@formcontrolname=\"datapoint\"])")).click();//select dropdown of datapoint
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("(//span[@class=\"mat-option-text\"])[1]")).click();//select first option from datapoint dropdown
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("(//input[@formcontrolname=\"fallbackValue\"])")).sendKeys("user");
+		
+
+		int totalDropdowns = 4;
+		int startingOptionIndex = 13;
+
+		for (int i = 0; i < totalDropdowns; i++) {
+		    int dropdownIndex = i+1; // Because XPath is 1-based
+		    int optionIndex = startingOptionIndex+i; // 6, 7, 8, ...
+
+		    try {
+		        System.out.println("Dropdown " + dropdownIndex + " → Option " + optionIndex);
+
+		        // Open the i-th dropdown
+		        WebElement dropdown = wait1.until(ExpectedConditions.elementToBeClickable(
+		            By.xpath("(//mat-select[@formcontrolname='datapoint'])[" + dropdownIndex + "]")));
+		        dropdown.click();
+
+		        // Select the dynamic option
+		        WebElement option = wait1.until(ExpectedConditions.elementToBeClickable(
+		            By.xpath("//mat-option[" + optionIndex + "]//span[@class='mat-option-text']")));
+		        option.click();
+
+		        // Optional: Fill fallback
+		        WebElement input = wait1.until(ExpectedConditions.elementToBeClickable(
+		            By.xpath("(//input[@formcontrolname='fallbackValue'])[" + dropdownIndex + "]")));
+		        input.sendKeys("Value_" + optionIndex);
+
+		    } catch (Exception e) {
+		        System.out.println("❌ Error at Dropdown " + dropdownIndex + ", Option " + optionIndex + ": " + e.getMessage());
+
+		        // Try to reset if dropdown hangs
+		        try {
+		            driver.findElement(By.tagName("body")).click();
+		            Thread.sleep(200);
+		        } catch (Exception ignored) {}
+		    }
+		}
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 }

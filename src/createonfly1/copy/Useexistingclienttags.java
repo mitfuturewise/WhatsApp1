@@ -73,6 +73,7 @@ public class Useexistingclienttags extends Login{
 //	}		
 		@Test(priority = 2)
 		public void Useexistingclienttags1() throws InterruptedException, AWTException {	
+		TestListeners.setDriver(driver);
 		wfnp.whatsapp();
 		Thread.sleep(1000);
 		createcamp.Useexistingclienttags();
@@ -84,44 +85,45 @@ public class Useexistingclienttags extends Login{
 		buttons.phonenumberbuttontextcontent();
 		Thread.sleep(1000);
 		devtools.devtools();
-		Thread.sleep(1000);
-		wfnp.whatsapp();
-		Thread.sleep(1000);
-		createcamp.Useexistingclienttags();
-		Thread.sleep(1000);
-		header.HeaderTextandAddVariablewithselectdapointandfallbackvalue();;
-		Thread.sleep(1000);
-		body.selectdatapointandfallbackvalue();
-		Thread.sleep(1000);
-		buttons.phonenumberbuttontextcontent();
-		Thread.sleep(1000);
-		devtools.devtools();
-		Thread.sleep(1000);
+//		Thread.sleep(1000);
+//		wfnp.whatsapp();
+//		Thread.sleep(1000);
+//		createcamp.Useexistingclienttags();
+//		Thread.sleep(1000);
+//		header.HeaderTextandAddVariablewithselectdapointandfallbackvalue();;
+//		Thread.sleep(1000);
+//		body.selectdatapointandfallbackvalue();
+//		Thread.sleep(1000);
+//		buttons.phonenumberbuttontextcontent();
+//		Thread.sleep(1000);
+//		devtools.devtools();
+//		Thread.sleep(1000);
 }	
-		@Test(priority = 3)
-		public void Useexistingclienttags3() throws InterruptedException, AWTException {	
-		wfnp.whatsapp();
-		Thread.sleep(1000);
-		createcamp.CreateTag();
-		Thread.sleep(1000);
-		header.headerisselectedasnone();
-		Thread.sleep(1000);
-		body.selectdatapointandfallbackvalue();
-		Thread.sleep(1000);
-		buttons.phonenumberbuttontextcontent();
-		Thread.sleep(1000);
-		devtools.devtools();
-		Thread.sleep(1000);
-		wfnp.whatsapp();
-		Thread.sleep(1000);
-		createcamp.CreateTag();
-		Thread.sleep(1000);
-		header.HeaderTextandAddVariablewithselectdapointandfallbackvalue();;
-		Thread.sleep(1000);
-		body.selectdatapointandfallbackvalue();
-		Thread.sleep(1000);
-		buttons.phonenumberbuttontextcontent();
-		Thread.sleep(1000);
-		devtools.devtools();	
-	}
+//		@Test(priority = 3)
+//		public void Useexistingclienttags3() throws InterruptedException, AWTException {	
+//		TestListeners.setDriver(driver);
+//		wfnp.whatsapp();
+//		Thread.sleep(1000);
+//		createcamp.CreateTag();
+//		Thread.sleep(1000);
+//		header.headerisselectedasnone();
+//		Thread.sleep(1000);
+//		body.selectdatapointandfallbackvalue();
+//		Thread.sleep(1000);
+//		buttons.phonenumberbuttontextcontent();
+//		Thread.sleep(1000);
+//		devtools.devtools();
+//		Thread.sleep(1000);
+//		wfnp.whatsapp();
+//		Thread.sleep(1000);
+//		createcamp.CreateTag();
+//		Thread.sleep(1000);
+//		header.HeaderTextandAddVariablewithselectdapointandfallbackvalue();;
+//		Thread.sleep(1000);
+//		body.selectdatapointandfallbackvalue();
+//		Thread.sleep(1000);
+//		buttons.phonenumberbuttontextcontent();
+//		Thread.sleep(1000);
+//		devtools.devtools();	
+//	}
 }

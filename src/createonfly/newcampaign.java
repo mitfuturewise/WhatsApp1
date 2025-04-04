@@ -25,7 +25,6 @@ public class newcampaign extends Login{
  public void createNewCampaignFlow() throws InterruptedException {
 		TestListeners.setDriver(driver);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-		driver.navigate().refresh();
 		driver.findElement(By.xpath("//span[contains(.,\"New Campaign\")]")).click();//new campaign
 		//enter campaign name
 		if (campaignCounter > 100) {
@@ -75,7 +74,6 @@ public static String generateUniqueTemplateName(int length) {
  public void Useexistingclienttags() throws InterruptedException {
 		TestListeners.setDriver(driver);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-		driver.navigate().refresh();
 		driver.findElement(By.xpath("//span[contains(.,\"New Campaign\")]")).click();//new campaign
 		//enter campaign name
 		if (campaignCounter > 100) {
@@ -123,7 +121,6 @@ public static String generateUniqueTemplateName(int length) {
  public void CreateTag() throws InterruptedException {
 		TestListeners.setDriver(driver);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-		driver.navigate().refresh();
 		driver.findElement(By.xpath("//span[contains(.,\"New Campaign\")]")).click();//new campaign
 		//enter campaign name
 		if (campaignCounter > 100) {

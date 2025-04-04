@@ -21,7 +21,8 @@ public class bodytext extends Login {
     public void bodytext() {
         // Initialize ChromeDriver (set the system property if needed)
         
-        String originalText = "Dear User,\r\n"
+        String originalText = 
+        		"Dear User,\r\n"
                 + "\r\n"
                 + "On [SIP Drive Date], I’m hosting a once-in-a-year investment drive called SIP Ka Maha Kumbh!\r\n"
                 + "\r\n"
@@ -32,6 +33,7 @@ public class bodytext extends Login {
                 + "\r\n"
                 + "Thank you for choosing us.\r\n"
                 + "Sincerely,\r\n";
+//        		"{{1}},{{2}},{{3}},{{4}},{{5}},{{6}},{{7}},{{8}},{{9}},{{10}},{{12}},{{13}},{{14}},{{15}},{{16}},{{17}},{{20}},{{21}},{{41}},{{39}},{{42}},{{60}},{{61}},{{62}},{{63}},{{64}},{{65}},{{66}}";
         
         // Remove non-BMP characters
         String filteredText = removeNonBMP(originalText);

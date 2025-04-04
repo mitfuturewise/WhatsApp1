@@ -4,10 +4,13 @@ import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+@Listeners(TestListeners.class)
 public class wfnp extends Login{
 	@Test
 	public void whatsapp() throws InterruptedException {
+		TestListeners.setDriver(driver);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		driver.findElement(By.xpath("(//span[contains(.,\"WhatsApp\")])[3]")).click();//whatsapp click
 		Thread.sleep(2000);
@@ -17,14 +20,17 @@ public class wfnp extends Login{
 	}
 	@Test
 	public void next() throws InterruptedException {
+		TestListeners.setDriver(driver);
 		driver.findElement(By.xpath("(//span[contains(.,\" NEXT STEP \")])[2]")).click();
 	}
 	@Test
 	public void publish() {
+		TestListeners.setDriver(driver);
 		driver.findElement(By.xpath("(//span[contains(.,\" Publish \")])[2]")).click();
 	}
 	@Test
 public void footer() {
+		TestListeners.setDriver(driver);
 	driver.findElement(By.xpath("(//input[@aria-required=\"false\"])[3]")).sendKeys("Thank you for choosing us.");//footer
     driver.findElement(By.xpath("(//mat-select[@formcontrolname=\"selectedButtonType\"])")).click();//select button dropdown
     driver.findElement(By.xpath("(//span[@class=\"mat-option-text\"])[1]")).click();//choose first option from dropdown

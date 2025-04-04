@@ -10,15 +10,12 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/HP/Downloads/selenium-devtools-v133-4.29.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/HP/Downloads/json-20230227.jar"/>
-	<classpathentry kind="lib" path="C:/Users/HP/Downloads/browsermob-proxy-2.1.4-bin/browsermob-proxy-2.1.4/lib/browsermob-dist-2.1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/HP/Downloads/selenium-devtools-v112-4.10.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/HP/Downloads/browsermob-core-2.1.5 (1).jar"/>
 	<classpathentry kind="lib" path="C:/Users/HP/Downloads/browsermob-proxy-2.1.4-bin/browsermob-proxy-2.1.4/browsermob-core-2.1.4-javadoc.jar"/>
 	<classpathentry kind="lib" path="C:/Users/HP/Downloads/browsermob-proxy-2.1.4-bin/browsermob-proxy-2.1.4/browsermob-core-2.1.4-sources.jar"/>
 	<classpathentry kind="lib" path="C:/Users/HP/Downloads/browsermob-proxy-2.1.4-bin/browsermob-proxy-2.1.4/browsermob-rest-2.1.4-javadoc.jar"/>
 	<classpathentry kind="lib" path="C:/Users/HP/Downloads/browsermob-proxy-2.1.4-bin/browsermob-proxy-2.1.4/browsermob-rest-2.1.4-sources.jar"/>
-	<classpathentry kind="lib" path="C:/Users/HP/Downloads/commons-codec-1.18.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/HP/Downloads/littleproxy-1.1.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/HP/Downloads/browsermob-core-2.1.5.jar"/>
-	<classpathentry kind="lib" path="C:/Users/HP/Downloads/bcpkix-jdk15on-1.70.jar"/>
-	<classpathentry kind="lib" path="C:/Users/HP/Downloads/littleproxy-1.1.2-littleproxy-shade.jar"/>
+	<classpathentry kind="lib" path="C:/Users/HP/Downloads/browsermob-proxy-2.1.4-bin/browsermob-proxy-2.1.4/lib/browsermob-dist-2.1.4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

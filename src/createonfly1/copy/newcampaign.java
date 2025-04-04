@@ -25,7 +25,6 @@ public class newcampaign extends Login{
  public void createNewCampaignFlow() throws InterruptedException {
 		TestListeners.setDriver(driver);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-		driver.navigate().refresh();
 		driver.findElement(By.xpath("//span[contains(.,\"New Campaign\")]")).click();//new campaign
 		//enter campaign name
 		if (campaignCounter > 100) {
@@ -75,7 +74,6 @@ public static String generateUniqueTemplateName(int length) {
  public void Useexistingclienttags() throws InterruptedException {
 		TestListeners.setDriver(driver);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-		driver.navigate().refresh();
 		driver.findElement(By.xpath("//span[contains(.,\"New Campaign\")]")).click();//new campaign
 		//enter campaign name
 		if (campaignCounter > 100) {
@@ -92,7 +90,7 @@ public static String generateUniqueTemplateName(int length) {
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("(//mat-select[@aria-required=\"true\"])[1]")).click();	//click dropdown button of  use case
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("(//span[@class=\"mat-option-text\"])[2]")).click();//select use case
+		driver.findElement(By.xpath("(//span[@class=\"mat-option-text\"])[29]")).click();//select use case
 //		Thread.sleep(1000);
 //		driver.findElement(By.xpath("(//input[@aria-required=\"true\"])")).click();//click on calender to select date
 		driver.findElement(By.xpath("(//button[contains(.,\"NEXT STEP\")])")).click();//click next step(use case selection)
@@ -123,7 +121,6 @@ public static String generateUniqueTemplateName(int length) {
  public void CreateTag() throws InterruptedException {
 		TestListeners.setDriver(driver);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-		driver.navigate().refresh();
 		driver.findElement(By.xpath("//span[contains(.,\"New Campaign\")]")).click();//new campaign
 		//enter campaign name
 		if (campaignCounter > 100) {

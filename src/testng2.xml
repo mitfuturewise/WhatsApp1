@@ -2,18 +2,7 @@
 <suite name="MyTestSuite">
 
     <!-- First, run createonfly tests in this order -->
-
-    <test name="createonfly1.copy">
-        <classes>
-            <class name="createonfly1.copy.Useexistingclienttags"/>  
-        </classes>
-    </test>
-    <test name="Whatsapp1.copy">
-        <classes>
-            <class name="Whatsapp1.copy.Useexistingclienttags"/>  
-        </classes>
-    </test>
-      <test name="Whatsapp">
+<test name="Whatsapp">
         <classes>
             <class name="Whatsapp.header"/>  
             <class name="Whatsapp.body"/> 
@@ -28,5 +17,16 @@
             <class name="createonfly.Buttons"/> 
         </classes>
     </test>
+    <test name="createonfly1.copy">
+        <classes>
+            <class name="createonfly1.copy.Useexistingclienttags"/>  
+        </classes>
+    </test>
+    <test name="Whatsapp1.copy">
+        <classes>
+            <class name="Whatsapp1.copy.Useexistingclienttags"/>  
+        </classes>
+    </test>
+      
 
 </suite>
