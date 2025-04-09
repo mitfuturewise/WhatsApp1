@@ -90,7 +90,7 @@ public static String generateUniqueTemplateName(int length) {
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("(//mat-select[@aria-required=\"true\"])[1]")).click();	//click dropdown button of  use case
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("(//span[@class=\"mat-option-text\"])[29]")).click();//select use case
+		driver.findElement(By.xpath("(//span[@class=\"mat-option-text\"])[31]")).click();//select use case
 //		Thread.sleep(1000);
 //		driver.findElement(By.xpath("(//input[@aria-required=\"true\"])")).click();//click on calender to select date
 		driver.findElement(By.xpath("(//button[contains(.,\"NEXT STEP\")])")).click();//click next step(use case selection)
@@ -100,7 +100,7 @@ public static String generateUniqueTemplateName(int length) {
 		WebElement search = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//input[@placeholder=\"Search\"])")));;
 		search.sendKeys("whatsapp");
 		WebElement whatsapp = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(),'whatsapp')]")));
-		WebElement whatsapp1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'whatsapp')]/ancestor::tr//label[@class='mat-checkbox-layout']")));
+		WebElement whatsapp1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[contains(text(),'whatsapp')]/ancestor::tr//label[@class='mat-checkbox-layout'])[3]")));
         whatsapp1.click();
 //		driver.findElement(By.xpath("(//label[@class=\"mat-checkbox-layout\"])[1]")).click();
 //		Thread.sleep(1000);

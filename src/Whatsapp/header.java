@@ -41,6 +41,7 @@ public void wheaderisselectedasnone() throws InterruptedException, AWTException 
 	driver.findElement(By.xpath("(//mat-select[@aria-disabled='false'])[2]")).click();//select header dropdown
 	Thread.sleep(1000);
 	driver.findElement(By.xpath("(//span[@class=\"mat-option-text\"])[1]")).click();//select text from header dropdown
+	Thread.sleep(1000);
 	devtools.devtools();
 }
 @Test(priority = 2)

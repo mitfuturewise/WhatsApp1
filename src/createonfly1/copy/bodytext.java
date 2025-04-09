@@ -36,16 +36,31 @@ public class bodytext extends Login {
     	String originalText = 
     		     "Dear User,\r\n"
     		    + "\r\n"
-    		    + "On [SIP Drive Date], I’m hosting a once-in-a-year investment drive called SIP Ka Maha Kumbh!\r\n"
+    		    + "Your details\r\n"
     		    + "\r\n"
-    		    + "🌟 500+ SIPs in One Day! Be a part of this historic wealth movement.\r\n"
-    		    + "🔥 Join thousands of investors taking a bold step towards financial freedom!\r\n"
-    		    + "📌 Limited window – 24 hours only! Be one of my 500 SIP investors!\r\n"
-    		    + "👉 Click below to request a callback & lock in your spot!\r\n"
+    		    + "{{1}},"
+    		    + "\r\n"
+    		    + "{{2}},"
+    		    + "\r\n"
+    		    + "{{3}},"
+    		    + "\r\n"
+    		    + "{{4}},"
+    		    + "\r\n"
+    		    + "{{5}},"
+    		    + "\r\n"
+    		    + "{{6}},"
+    		    + "\r\n"
+    		    + "{{7}},"
+    		    + "\r\n"
+    		    + "{{8}},"
+    		    + "\r\n"
+    		    + "{{9}},"
+    		    + "\r\n"
+    		    + "{{10}},"
     		    + "\r\n"
     		    + "Thank you for choosing us.\r\n"
-    		    + "Sincerely,\r\n"
-    		    + "{{1}}, {{2}}, {{3}}, {{4}}";       
+    		    + "Sincerely,\r\n";
+    		       
         // Remove non-BMP characters
         
         // Remove non-BMP characters
