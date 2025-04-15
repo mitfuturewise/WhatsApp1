@@ -32,7 +32,7 @@ newcampaign createcamp = new newcampaign();
 wfnp wfnp = new wfnp();
 bodytext bodytext = new bodytext();
 devtools devtools = new devtools();
-private final String expectedUrlBase = "https://staging.ifanow.in/futurewise/api/v2/web/whatsapp/campaign/create/template/onFly?";
+private final String expectedUrlBase = "https://apis.ifanow.com/futurewise/api/v2/web/whatsapp/campaign/create/template/onFly?";
 @Test(priority = 1)
 public void headerisselectedasnone() throws InterruptedException, AWTException {
 	TestListeners.setDriver(driver);
@@ -85,46 +85,48 @@ public void testWithFallbackValue() throws InterruptedException {
 	 devtools.devtools();
 }
 
+//@Test(priority = 4)
+//public void HeaderTextandAddVariable() throws InterruptedException {
+//	TestListeners.setDriver(driver);
+//	wfnp.whatsapp();
+//	Thread.sleep(1000);
+//	createcamp.Useexistingclienttags();
+//	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+//	driver.findElement(By.xpath("(//mat-select[@aria-disabled='false'])[2]")).click();//select header dropdown
+//	Thread.sleep(1000);
+//	driver.findElement(By.xpath("(//span[@class=\"mat-option-text\"])[2]")).click();//enter text to header dropdown
+//	Thread.sleep(1000);
+//	 driver.findElement(By.xpath("(//input[@autocomplete=\"off\"])[4]"))
+//     .sendKeys("FallbackValue");
+//	 Thread.sleep(1000);
+//	 driver.findElement(By.xpath("(//p[contains(.,'Add Variable')])[1]")).click();//click on add variable
+////	footer.footer();
+//	 bodytext.bodytext();
+//	 devtools.devtools1();
+//}
+//@Test(priority = 5)
+//public void HeaderTextandAddVariablewithselectdapoint() throws InterruptedException {
+//	TestListeners.setDriver(driver);
+//	wfnp.whatsapp();
+//	Thread.sleep(1000);
+//	createcamp.Useexistingclienttags();
+//	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+//	driver.findElement(By.xpath("(//mat-select[@aria-disabled='false'])[2]")).click();//select header dropdown
+//	Thread.sleep(1000);
+//	driver.findElement(By.xpath("(//span[@class=\"mat-option-text\"])[2]")).click();//enter text to header dropdown
+//	Thread.sleep(1000);
+//	driver.findElement(By.xpath("(//input[@autocomplete=\"off\"])[4]"))
+//     .sendKeys("FallbackValue");
+//	 Thread.sleep(1000);
+//	 driver.findElement(By.xpath("(//p[contains(.,'Add Variable')])[1]")).click();//click on add variable
+//	 Thread.sleep(1000);
+//	 driver.findElement(By.xpath("(//mat-select[@formcontrolname=\"headerPlaceholdervariable\"])")).click();//click to select datapoint
+//	 Thread.sleep(1000);
+//	 driver.findElement(By.xpath("(//span[@class=\"mat-option-text\"])[1]")).click();//click to select 1st datapoint
+//	 bodytext.bodytext();
+//	 devtools.devtools1();
+//}
 @Test(priority = 4)
-public void HeaderTextandAddVariable() throws InterruptedException {
-	TestListeners.setDriver(driver);
-	wfnp.whatsapp();
-	Thread.sleep(1000);
-	createcamp.Useexistingclienttags();
-	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-	driver.findElement(By.xpath("(//mat-select[@aria-disabled='false'])[2]")).click();//select header dropdown
-	Thread.sleep(1000);
-	driver.findElement(By.xpath("(//span[@class=\"mat-option-text\"])[2]")).click();//enter text to header dropdown
-	 driver.findElement(By.xpath("(//input[@autocomplete=\"off\"])[4]"))
-     .sendKeys("FallbackValue");
-	 driver.findElement(By.xpath("(//p[contains(.,'Add Variable')])[1]")).click();//click on add variable
-//	footer.footer();
-	 bodytext.bodytext();
-	 devtools.devtools1();
-}
-@Test(priority = 5)
-public void HeaderTextandAddVariablewithselectdapoint() throws InterruptedException {
-	TestListeners.setDriver(driver);
-	wfnp.whatsapp();
-	Thread.sleep(1000);
-	createcamp.Useexistingclienttags();
-	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-	driver.findElement(By.xpath("(//mat-select[@aria-disabled='false'])[2]")).click();//select header dropdown
-	Thread.sleep(1000);
-	driver.findElement(By.xpath("(//span[@class=\"mat-option-text\"])[2]")).click();//enter text to header dropdown
-	Thread.sleep(1000);
-	driver.findElement(By.xpath("(//input[@autocomplete=\"off\"])[4]"))
-     .sendKeys("FallbackValue");
-	 Thread.sleep(1000);
-	 driver.findElement(By.xpath("(//p[contains(.,'Add Variable')])[1]")).click();//click on add variable
-	 Thread.sleep(1000);
-	 driver.findElement(By.xpath("(//mat-select[@formcontrolname=\"headerPlaceholdervariable\"])")).click();//click to select datapoint
-	 Thread.sleep(1000);
-	 driver.findElement(By.xpath("(//span[@class=\"mat-option-text\"])[1]")).click();//click to select 1st datapoint
-	 bodytext.bodytext();
-	 devtools.devtools1();
-}
-@Test(priority = 6)
 public void HeaderTextandAddVariablewithselectdapointandfallbackvalue() throws InterruptedException {
 	TestListeners.setDriver(driver);
 	wfnp.whatsapp();

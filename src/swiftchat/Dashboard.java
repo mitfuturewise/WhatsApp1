@@ -23,7 +23,7 @@ public class Dashboard {
 		 Thread.sleep(1000);
 		 driver.findElement(By.xpath("//input[@type=\"email\"]")).sendKeys("mayur@futurewise.co.in");//enter username
 		 Thread.sleep(1000);
-		 driver.findElement(By.xpath("//input[@type=\"password\"]")).sendKeys("Mayur@123");//enter pwd
+		 driver.findElement(By.xpath("//input[@type=\"password\"]")).sendKeys("Mayur");//enter pwd
 		 Thread.sleep(1000);
 		 driver.findElement(By.xpath("//button[@type=\"submit\"]")).click();//click on submit
 		 

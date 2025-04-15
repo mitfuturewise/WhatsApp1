@@ -5,6 +5,7 @@ import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
+import java.time.Duration;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -17,10 +18,10 @@ import org.openqa.selenium.JavascriptExecutor;
 @Listeners (TestListeners.class)
 public class Create_Template extends Dashboard {
 	bodytext bodytext = new bodytext();
-	@Test
+	@Test(priority=1)
 	public void template() throws InterruptedException {
 		TestListeners.setDriver(driver);
-		 driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		 driver.findElement(By.xpath("//a[contains(.,\"Create Template\")]")).click();
 		 Thread.sleep(1000);
 		 driver.findElement(By.xpath("//a[contains(.,\"Back\")]")).click();
