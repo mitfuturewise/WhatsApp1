@@ -12,10 +12,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
-import Whatsapp1.copy.Login;
-import Whatsapp1.copy.TestListeners;
-import Whatsapp1.copy.wfnp;
 @Listeners(TestListeners.class)
 public class newcampaign extends Login{
 	 private static int campaignCounter = 1;

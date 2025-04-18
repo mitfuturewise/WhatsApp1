@@ -16,7 +16,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import Whatsapp1.copy.TestListeners;
 @Listeners(TestListeners.class)
 public class newcampaign extends Login{
 	 private static int campaignCounter = 1;
@@ -100,7 +99,7 @@ public static String generateUniqueTemplateName(int length) {
 		WebElement search = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//input[@placeholder=\"Search\"])")));;
 		search.sendKeys("whatsapp");
 		WebElement whatsapp = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(),'whatsapp')]")));
-		WebElement whatsapp1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[contains(text(),'whatsapp')]/ancestor::tr//label[@class='mat-checkbox-layout'])[3]")));
+		WebElement whatsapp1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[contains(text(),'whatsapp')]/ancestor::tr//label[@class='mat-checkbox-layout'])")));
         whatsapp1.click();
 //		driver.findElement(By.xpath("(//label[@class=\"mat-checkbox-layout\"])[1]")).click();
 //		Thread.sleep(1000);

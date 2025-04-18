@@ -17,19 +17,15 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 
-import Whatsapp.Login;
-
-
-
 public class devtools extends Login {
-	public final String expectedUrlBase = "https://staging.ifanow.in/futurewise/api/v2/web/whatsapp/campaign/create/template/onFly?";
+	public final String expectedUrlBase = "https://apis.ifanow.com/futurewise/api/v2/web/whatsapp/campaign/create/template/onFly?";
 	public AtomicInteger responseStatus = new AtomicInteger(-1);
 	public int getResponseStatus() {
         return responseStatus.get();
     }
 	public void devtools() {
 		TestListeners.setDriver(driver);
-	    ChromeDriver chromeDriver = (ChromeDriver) driver;
+		ChromeDriver chromeDriver = (ChromeDriver) driver;
 	    DevTools devTools = chromeDriver.getDevTools();
 	    devTools.createSession();
 
