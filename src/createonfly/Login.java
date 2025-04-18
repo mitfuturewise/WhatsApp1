@@ -29,7 +29,7 @@ public class Login {
 	        driver = new ChromeDriver();
 
 	        // Open the login page and perform login
-	        driver.get("https://m.ifanow.com/login");
+	        driver.get("https://my-planner.in/login");
 	        driver.manage().window().maximize();
 	        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 //	        driver.findElement(By.xpath("//input[@id='mat-input-0']")).sendKeys("acmefinancial75@gmail.com");

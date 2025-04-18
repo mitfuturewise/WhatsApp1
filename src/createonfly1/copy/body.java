@@ -65,7 +65,7 @@ public class body extends Login {
 //		Thread.sleep(1000);
 		WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(10));
 		int totalDropdowns = 10; // Total number of dropdowns, adjust as needed
-		int startingOptionIndex = 71;
+		int startingOptionIndex = 15;
 
 		// First, execute the process to update the body text
 		for (int i = 0; i < totalDropdowns; i++) {
