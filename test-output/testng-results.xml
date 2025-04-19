@@ -1,112 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
     <line>
-      <![CDATA[Test Passed]]>
-    </line>
-    <line>
-      <![CDATA[Test Passed]]>
-    </line>
-    <line>
-      <![CDATA[Test Passed]]>
+      <![CDATA[Test Failed]]>
     </line>
   </reporter-output>
-  <suite started-at="2025-04-18T17:59:12 IST" name="Default suite" finished-at="2025-04-18T18:02:12 IST" duration-ms="180282">
+  <suite started-at="2025-04-19T17:05:14 IST" name="Default suite" finished-at="2025-04-19T17:07:08 IST" duration-ms="114384">
     <groups>
     </groups>
-    <test started-at="2025-04-18T17:59:12 IST" name="Default test" finished-at="2025-04-18T18:02:12 IST" duration-ms="180282">
-      <class name="Whatsapp1.copy.Useexistingclienttags">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:Whatsapp1.copy.Useexistingclienttags@35ef1869]" started-at="2025-04-18T17:59:12 IST" name="setUp" finished-at="2025-04-18T17:59:19 IST" duration-ms="7614" status="PASS">
+    <test started-at="2025-04-19T17:05:14 IST" name="Default test" finished-at="2025-04-19T17:07:08 IST" duration-ms="114384">
+      <class name="createonfly1.copy.Useexistingclienttags">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:createonfly1.copy.Useexistingclienttags@647e447]" started-at="2025-04-19T17:05:14 IST" name="setUp" finished-at="2025-04-19T17:05:19 IST" duration-ms="5529" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="Useexistingclienttags1()[pri:2, instance:Whatsapp1.copy.Useexistingclienttags@35ef1869]" started-at="2025-04-18T17:59:19 IST" name="Useexistingclienttags1" finished-at="2025-04-18T18:01:01 IST" duration-ms="101443" status="PASS">
+        <test-method signature="Useexistingclienttags3()[pri:3, instance:createonfly1.copy.Useexistingclienttags@647e447]" started-at="2025-04-19T17:05:19 IST" name="Useexistingclienttags3" finished-at="2025-04-19T17:07:08 IST" duration-ms="108813" status="PASS">
           <reporter-output>
             <line>
-              <![CDATA[Test Passed]]>
-            </line>
-            <line>
-              <![CDATA[Test Passed]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- Useexistingclienttags1 -->
-        <test-method signature="Useexistingclienttags3()[pri:3, instance:Whatsapp1.copy.Useexistingclienttags@35ef1869]" started-at="2025-04-18T18:01:01 IST" name="Useexistingclienttags3" finished-at="2025-04-18T18:02:12 IST" duration-ms="70940" status="FAIL">
-          <exception class="org.openqa.selenium.ElementClickInterceptedException">
-            <message>
-              <![CDATA[element click intercepted: Element <span _ngcontent-vbc-c534="" mat-line="" class="mat-line title ng-tns-c534-1 ng-star-inserted" style="">...</span> is not clickable at point (108, 496). Other element would receive the click: <div _ngcontent-vbc-c985="" class="col-md-2 pt-100 br h-100vh">...</div>
-  (Session info: chrome=135.0.7049.96)
-Build info: version: '4.21.0', revision: '79ed462ef4'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [75b50ccaa504fef3a4e2623f27b34f6b, clickElement {id=f.381A305FD92A976A8B8EB4D315BBF9DE.d.F0A23F71B9789717E80C6A084D9EA392.e.1191}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.96, chrome: {chromedriverVersion: 135.0.7049.95 (de2eb485a195..., userDataDir: C:\Users\HP\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54846}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54846/devtoo..., se:cdpVersion: 135.0.7049.96, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (75b50ccaa504fef3a4e2623f27b34f6b)] -> xpath: (//span[contains(.,"WhatsApp")])[3]]
-Session ID: 75b50ccaa504fef3a4e2623f27b34f6b]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <span _ngcontent-vbc-c534="" mat-line="" class="mat-line title ng-tns-c534-1 ng-star-inserted" style="">...</span> is not clickable at point (108, 496). Other element would receive the click: <div _ngcontent-vbc-c985="" class="col-md-2 pt-100 br h-100vh">...</div>
-  (Session info: chrome=135.0.7049.96)
-Build info: version: '4.21.0', revision: '79ed462ef4'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [75b50ccaa504fef3a4e2623f27b34f6b, clickElement {id=f.381A305FD92A976A8B8EB4D315BBF9DE.d.F0A23F71B9789717E80C6A084D9EA392.e.1191}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.96, chrome: {chromedriverVersion: 135.0.7049.95 (de2eb485a195..., userDataDir: C:\Users\HP\AppData\Local\T...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54846}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54846/devtoo..., se:cdpVersion: 135.0.7049.96, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (75b50ccaa504fef3a4e2623f27b34f6b)] -> xpath: (//span[contains(.,"WhatsApp")])[3]]
-Session ID: 75b50ccaa504fef3a4e2623f27b34f6b
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-at Whatsapp1.copy.wfnp.whatsapp(wfnp.java:12)
-at Whatsapp1.copy.Useexistingclienttags.Useexistingclienttags3(Useexistingclienttags.java:115)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
-          <reporter-output>
-            <line>
-              <![CDATA[Test Passed]]>
+              <![CDATA[Test Failed]]>
             </line>
           </reporter-output>
         </test-method> <!-- Useexistingclienttags3 -->
-      </class> <!-- Whatsapp1.copy.Useexistingclienttags -->
+      </class> <!-- createonfly1.copy.Useexistingclienttags -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

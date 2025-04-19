@@ -34,10 +34,10 @@ public class Login {
 	        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 //	        driver.findElement(By.xpath("//input[@id='mat-input-0']")).sendKeys("acmefinancial75@gmail.com");
 //	        driver.findElement(By.xpath("//input[@id='mat-input-1']")).sendKeys("Acme@1234");
-//	        driver.findElement(By.xpath("//input[@id='mat-input-0']")).sendKeys("sonesh.dedhia@manekfinancial.com");
-//	        driver.findElement(By.xpath("//input[@id='mat-input-1']")).sendKeys("123#Manek@!");
-	        driver.findElement(By.xpath("//input[@id='mat-input-0']")).sendKeys("mitalikadam29052001@gmail.com");
-	        driver.findElement(By.xpath("//input[@id='mat-input-1']")).sendKeys("Ifanow@123");
+	        driver.findElement(By.xpath("//input[@id='mat-input-0']")).sendKeys("supriya@futurewise.co.in");
+	        driver.findElement(By.xpath("//input[@id='mat-input-1']")).sendKeys("su123");
+//	        driver.findElement(By.xpath("//input[@id='mat-input-0']")).sendKeys("mitalikadam29052001@gmail.com");
+//	        driver.findElement(By.xpath("//input[@id='mat-input-1']")).sendKeys("Ifanow@123");
 	        driver.findElement(By.xpath("//button[contains(@class, 'mainloginBtn')]")).click();
 	    }
 //	    @Test

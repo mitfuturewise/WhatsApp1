@@ -3,7 +3,11 @@ package Whatsapp;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 @Listeners(TestListeners.class)
@@ -12,7 +16,11 @@ public class wfnp extends Login{
 	public void whatsapp() throws InterruptedException {
 		TestListeners.setDriver(driver);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-		driver.findElement(By.xpath("(//span[contains(.,\"WhatsApp\")])[3]")).click();//whatsapp click
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		 WebElement whatsapp = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//span[contains(.,\"WhatsApp\")])[3]")));//whatsapp click
+		 ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", whatsapp);
+	        Thread.sleep(300);
+	        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", whatsapp);
 		Thread.sleep(2000);
 		driver.navigate().refresh();
 		Thread.sleep(2000);

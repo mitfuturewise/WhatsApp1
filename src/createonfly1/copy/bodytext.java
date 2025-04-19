@@ -60,7 +60,11 @@ public class bodytext extends Login {
     		    + "\r\n"
     		    + "Thank you for choosing us.\r\n"
     		    + "Sincerely,\r\n";
-    		       
+//    	String originalText = "Dear {{1}},\r\n"
+//    			+ "We’re thrilled to share the news of your recent appraisal – congratulations! Your consistent hard work, commitment, and dedication have truly made a difference, and this recognition is well deserved.\r\n"
+//    			+ "We value your contributions and look forward to your continued growth and success with us.\r\n"
+//    			+ "Warm regards,\r\n"
+//    			+ "{{2}}\r\n"; 
         // Remove non-BMP characters
         
         // Remove non-BMP characters

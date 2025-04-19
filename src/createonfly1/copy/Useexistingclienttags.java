@@ -82,8 +82,8 @@ public class Useexistingclienttags extends Login{
 		Thread.sleep(1000);
 		body.selectdatapointandfallbackvalue();
 		Thread.sleep(1000);
-//		buttons.phonenumberbuttontextcontent();
-//		Thread.sleep(1000);
+		buttons.phonenumberbuttontextcontent();
+		Thread.sleep(1000);
 		devtools.devtools();
 //		Thread.sleep(1000);
 //		wfnp.whatsapp();

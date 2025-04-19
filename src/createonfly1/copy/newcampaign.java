@@ -162,7 +162,7 @@ public static String generateUniqueTemplateName(int length) {
         Thread.sleep(1000);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(25));
         try {
-       
+////1      
             // Locate the search input field and enter first name
             WebElement search = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@formcontrolname='name']")));
             search.sendKeys("Sandeep Kamble");
@@ -174,19 +174,21 @@ public static String generateUniqueTemplateName(int length) {
             // Ensure the checkbox corresponding to "Sandeep Kamble" is clickable
             WebElement sandeep1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'Sandeep Kamble')]/ancestor::tr//label[@class='mat-checkbox-layout']")));
             sandeep1.click();
-            Thread.sleep(2000);            // Clear search field properly and enter new name
-            search.sendKeys(Keys.CONTROL + "a");
-            search.sendKeys(Keys.BACK_SPACE);
-            search.sendKeys("Mitali Kadam");
-            search.sendKeys(Keys.ENTER);
-
-            // Wait until "Mitali Kadam" appears in the search results
-            WebElement mitali = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(),'Mitali Kadam')]")));
-
-            // Re-locate checkbox for "Mitali Kadam" to avoid stale element issues
-            WebElement mitali1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'Mitali Kadam')]/ancestor::tr//label[@class='mat-checkbox-layout']")));
-            mitali1.click();
-//3   
+            
+////2
+//            Thread.sleep(2000);            // Clear search field properly and enter new name
+//            search.sendKeys(Keys.CONTROL + "a");
+//            search.sendKeys(Keys.BACK_SPACE);
+//            search.sendKeys("Mitali Kadam");
+//            search.sendKeys(Keys.ENTER);
+//
+//            // Wait until "Mitali Kadam" appears in the search results
+//            WebElement mitali = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(),'Mitali Kadam')]")));
+//
+//            // Re-locate checkbox for "Mitali Kadam" to avoid stale element issues
+//            WebElement mitali1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'Mitali Kadam')]/ancestor::tr//label[@class='mat-checkbox-layout']")));
+//            mitali1.click();
+////3   
             Thread.sleep(2000);
             search.sendKeys(Keys.CONTROL + "a");
             search.sendKeys(Keys.BACK_SPACE);
