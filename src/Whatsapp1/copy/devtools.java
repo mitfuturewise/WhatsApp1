@@ -18,7 +18,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 
 public class devtools extends Login {
-	public final String expectedUrlBase = "https://apis.ifanow.com/futurewise/api/v2/web/whatsapp/campaign/create/template/onFly?";
+	public final String expectedUrlBase = "https://staging.ifanow.in/futurewise/api/v1/web/whatsapp/campaign/create/template/onFly?";
 	public AtomicInteger responseStatus = new AtomicInteger(-1);
 	public int getResponseStatus() {
         return responseStatus.get();
@@ -157,8 +157,9 @@ public class devtools extends Login {
 		        } else {
 		        	WebElement nextBtn = driver.findElement(By.xpath("(//span[contains(.,\" Yes \")])[2]"));
 		            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", nextBtn);
+//		            Thread.sleep(1000);
 		            nextBtn.click();
-		            Thread.sleep(10000);
+		           
 		            // ✅ Wait for next UI element to confirm this step finished
 		            new WebDriverWait(driver, Duration.ofSeconds(10))
 		                .until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='textZindex']")))

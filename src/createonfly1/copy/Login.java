@@ -29,7 +29,7 @@ public class Login {
 	        driver = new ChromeDriver();
 	        TestListeners.setDriver(driver);
 	        // Open the login page and perform login
-	        driver.get("https://my-planner.in/login");
+	        driver.get("https://dev.ifanow.in/login");
 	        driver.manage().window().maximize();
 	        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 //	        driver.findElement(By.xpath("//input[@id='mat-input-0']")).sendKeys("acmefinancial75@gmail.com");
@@ -38,6 +38,8 @@ public class Login {
 	        driver.findElement(By.xpath("//input[@id='mat-input-1']")).sendKeys("su123");
 //	        driver.findElement(By.xpath("//input[@id='mat-input-0']")).sendKeys("mitalikadam29052001@gmail.com");
 //	        driver.findElement(By.xpath("//input[@id='mat-input-1']")).sendKeys("Ifanow@123");
+//	        driver.findElement(By.xpath("//input[@id='mat-input-0']")).sendKeys("sonesh.dedhia@manekfinancial.com");
+//	        driver.findElement(By.xpath("//input[@id='mat-input-1']")).sendKeys("123#Manek@!");
 	        driver.findElement(By.xpath("//button[contains(@class, 'mainloginBtn')]")).click();
 	    }
 //	    @Test

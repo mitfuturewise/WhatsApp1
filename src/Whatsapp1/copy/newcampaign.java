@@ -1,6 +1,10 @@
 package Whatsapp1.copy;
 
 import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Map;
 import java.util.Random;
 import java.util.UUID;
 
@@ -8,6 +12,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Listeners;
@@ -151,6 +156,17 @@ public void newCampaign() throws InterruptedException {
  @Test
  public void CreateTag() throws InterruptedException {
 		TestListeners.setDriver(driver);
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--disable-infobars");
+		options.addArguments("--disable-notifications");
+		options.addArguments("--disable-popup-blocking");
+
+		// Disable password manager
+		options.setExperimentalOption("prefs", Map.of(
+		    "credentials_enable_service", false,
+		    "profile.password_manager_enabled", false
+		));
+
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		driver.findElement(By.xpath("//span[contains(.,\"New Campaign\")]")).click();//new campaign
 		//enter campaign name
@@ -289,6 +305,82 @@ public void newCampaign() throws InterruptedException {
 
           // ✅ Click using JavaScript (if normal click fails)
           ((JavascriptExecutor) driver).executeScript("arguments[0].click();", modifyTemplateButton);
+		//for template name
+		String templateName = generateUniqueTemplateName(20);
+	    
+	    // Locate the input field using the XPath and enter the unique template name
+	    WebElement inputField = driver.findElement(By.xpath("//input[@formcontrolname='templateName']"));
+	    inputField.clear();
+	    inputField.sendKeys(templateName);
+		}
+ @Test
+ public void schedule() throws InterruptedException {
+		TestListeners.setDriver(driver);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		driver.findElement(By.xpath("//span[contains(.,\"New Campaign\")]")).click();//new campaign
+		//enter campaign name
+		if (campaignCounter > 100) {
+	        campaignCounter = 1;
+	    }
+	    // Build the campaign name
+		int useCaseIndex = 4;
+		String dayToSelect = "23";           // selected day from calendar
+		String timeToSelect = "18:00";       // selected time from dropdown
+
+		// Step 2: Current year/month for forming full selected date
+		int year = LocalDate.now().getYear();
+		int month = LocalDate.now().getMonthValue();
+		String formattedSelectedDate = String.format("%04d-%02d-%02d", year, month, Integer.parseInt(dayToSelect));  // e.g. 2025-05-23
+
+		// Step 3: Format selected time (remove colon)
+		String formattedSelectedTime = timeToSelect.replace(":", "");  // → 1600
+
+		// Step 4: Get current system time
+		String currentTime = LocalTime.now().format(DateTimeFormatter.ofPattern("HHmm")); // → 1542
+
+		// Step 5: Create campaign name
+		String uniqueCampaignName = "Campaign_" + campaignCounter + "_" + formattedSelectedDate + "_" + formattedSelectedTime + "_current" + currentTime;
+		campaignCounter++;
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(25));
+	    // Locate the campaign input field and send the campaign name
+	    driver.findElement(By.xpath("//input[@aria-required='true']")).sendKeys(uniqueCampaignName);
+		driver.findElement(By.xpath("(//span[@class=\"mat-radio-inner-circle\"])[2]")).click();//select one time radio button
+		driver.findElement(By.xpath("(//button[contains(text(),\"NEXT STEP\")])")).click();//click on next step
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("(//mat-select[@aria-required=\"true\"])[1]")).click();	//click dropdown button of  use case
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("(//span[@class='mat-option-text'])[" + useCaseIndex + "]")).click();//select use case
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//span[@class=\"mat-slide-toggle-bar\"]")).click();//enable schedule
+		Thread.sleep(1000);
+//		String dayToSelect = "23"; // or any day
+		driver.findElement(By.xpath("//input[@formcontrolname='manualDate']")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//div[contains(@class,'mat-calendar-body-cell-content') and normalize-space(text())='" + dayToSelect + "']")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//mat-select[@formcontrolname='manualTime']")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//span[@class='mat-option-text' and normalize-space(text())='" + timeToSelect + "']")).click();
+//		driver.findElement(By.xpath("//mat-select[@formcontrolname=\"manualTime\"]")).click();
+		Thread.sleep(1000);
+//		driver.findElement(By.xpath("(//input[@aria-required=\"true\"])")).click();//click on calender to select date
+		driver.findElement(By.xpath("(//button[contains(.,\"NEXT STEP\")])")).click();//click next step(use case selection)
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("(//label[@class=\"mat-radio-label\"])[2]")).click();//select use existing client tags
+		Thread.sleep(1000);
+		WebElement search = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//input[@placeholder=\"Search\"])")));;
+		search.sendKeys("whatsapp");
+		WebElement whatsapp = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(),'whatsapp')]")));
+		WebElement whatsapp1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'whatsapp')]/ancestor::tr//label[@class='mat-checkbox-layout']")));
+        whatsapp1.click();
+//		driver.findElement(By.xpath("(//label[@class=\"mat-checkbox-layout\"])[1]")).click();
+//		Thread.sleep(1000);
+//		driver.findElement(By.xpath("(//label[@class=\"mat-checkbox-layout\"])[2]")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[contains(text(),\"NEXT STEP\")]")).click();//click next step (Audience selection)
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//p[contains(text(),\"Modify Template\")]")).click();//modify template
+		Thread.sleep(1000);
 		//for template name
 		String templateName = generateUniqueTemplateName(20);
 	    

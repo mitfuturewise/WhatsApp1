@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="createonfly1.copy.bodytext">
+      <class name="Whatsapp1.copy.Useexistingclienttags">
         <methods>
-          <include name="bodytext"/>
           <include name="setUp"/>
+          <include name="Useexistingclienttags4"/>
         </methods>
-      </class> <!-- createonfly1.copy.bodytext -->
+      </class> <!-- Whatsapp1.copy.Useexistingclienttags -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

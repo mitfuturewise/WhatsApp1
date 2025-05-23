@@ -17,13 +17,13 @@ public class Dashboard {
 		TestListeners.setDriver(driver);
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-		driver.get("https://devwhatsapp.ifanow.in/login");
+		driver.get("https://whatsapp.ifanow.com/login");
 		 driver.manage().window().maximize();
 		 driver.findElement(By.xpath("//button[@type=\"submit\"]")).click();//click on submit to check all field are required or not
 		 Thread.sleep(1000);
 		 driver.findElement(By.xpath("//input[@type=\"email\"]")).sendKeys("mayur@futurewise.co.in");//enter username
 		 Thread.sleep(1000);
-		 driver.findElement(By.xpath("//input[@type=\"password\"]")).sendKeys("Mayur");//enter pwd
+		 driver.findElement(By.xpath("//input[@type=\"password\"]")).sendKeys("Mayur1");//enter pwd
 		 Thread.sleep(1000);
 		 driver.findElement(By.xpath("//button[@type=\"submit\"]")).click();//click on submit
 		 

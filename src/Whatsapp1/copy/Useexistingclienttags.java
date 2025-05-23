@@ -32,17 +32,17 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import Whatsapp.newcampaign;
+//import Whatsapp.newcampaign;
 
 @Listeners(TestListeners.class)
 public class Useexistingclienttags extends Login{
-	Whatsapp1.copy.newcampaign createcamp = new Whatsapp1.copy.newcampaign();
+	newcampaign createcamp = new newcampaign();
 	wfnp wfnp = new wfnp();
 	body body = new body();
 	header header = new header();
 	Buttons buttons = new Buttons();
 	devtools devtools = new devtools();
-	private final String expectedUrlBase = "https://apis.ifanow.com/futurewise/api/v2/web/whatsapp/campaign/create/template/onFly?";
+	private final String expectedUrlBase = "https://staging.ifanow.in/futurewise/api/v1/web/whatsapp/campaign/create/template/onFly?";
 //	@Test(priority = 1)
 //	public void Useexistingclienttags() throws InterruptedException, AWTException {
 //		TestListeners.setDriver(driver);
@@ -71,57 +71,228 @@ public class Useexistingclienttags extends Login{
 //		devtools.devtools();
 //		Thread.sleep(1000);	
 //	}		
-		@Test(priority = 2)
-		public void Useexistingclienttags1() throws InterruptedException, AWTException {	
+//		@Test(priority = 2)
+//		public void Useexistingclienttags1() throws InterruptedException, AWTException {	
+//		wfnp.whatsapp();
+//		Thread.sleep(1000);
+//		createcamp.Useexistingclienttags();
+//		Thread.sleep(1000);
+//		header.wheaderisselectedasnone();
+//		Thread.sleep(1000);
+//		body.wselectdatapointandfallbackvalue();
+//		Thread.sleep(1000);
+//		buttons.wphonenumberbuttontextcontent();
+//		Thread.sleep(1000);
+//		devtools.devtools();
+//		Thread.sleep(1000);
+//		wfnp.whatsapp();
+//		Thread.sleep(1000);
+//		createcamp.Useexistingclienttags();
+//		Thread.sleep(1000);
+//		header.wHeaderTextandAddVariablewithselectdapointandfallbackvalue();;
+//		Thread.sleep(1000);
+//		body.wselectdatapointandfallbackvalue();
+//		Thread.sleep(1000);
+//		buttons.wphonenumberbuttontextcontent();
+//		Thread.sleep(1000);
+//		devtools.devtools();
+//		Thread.sleep(1000);
+//}	
+//		@Test(priority = 3)
+//		public void Useexistingclienttags3() throws InterruptedException, AWTException {	
+//		wfnp.whatsapp();
+//		Thread.sleep(1000);
+//		createcamp.CreateTag();
+//		Thread.sleep(1000);
+//		header.wheaderisselectedasnone();
+//		Thread.sleep(1000);
+////		body.wselectdatapointandfallbackvalue();
+////		Thread.sleep(1000);
+//		buttons.wphonenumberbuttontextcontent();
+//		Thread.sleep(1000);
+//		devtools.devtools();
+//		Thread.sleep(1000);
+//		wfnp.whatsapp();
+//		Thread.sleep(1000);
+//		createcamp.CreateTag();
+//		Thread.sleep(1000);
+//		header.wHeaderTextandAddVariablewithselectdapointandfallbackvalue();;
+//		Thread.sleep(1000);
+////		body.wselectdatapointandfallbackvalue();
+////		Thread.sleep(1000);
+//		buttons.wphonenumberbuttontextcontent();
+//		Thread.sleep(1000);
+//		devtools.devtools();	
+//	}
+	@Test(priority = 4)
+	public void Useexistingclienttags4() throws InterruptedException, AWTException {
+		TestListeners.setDriver(driver);
 		wfnp.whatsapp();
 		Thread.sleep(1000);
-		createcamp.Useexistingclienttags();
+		createcamp.schedule();
 		Thread.sleep(1000);
 		header.wheaderisselectedasnone();
 		Thread.sleep(1000);
-//		body.wselectdatapointandfallbackvalue();
-//		Thread.sleep(1000);
-		buttons.wphonenumberbuttontextcontent();
+		devtools.devtools();
+		Thread.sleep(1000);
+
+		wfnp.whatsapp();
+		Thread.sleep(1000);
+		createcamp.schedule();
+		Thread.sleep(1000);
+		header.wHeaderTextandAddVariablewithselectdapointandfallbackvalue();
 		Thread.sleep(1000);
 		devtools.devtools();
 		Thread.sleep(1000);
+		
 		wfnp.whatsapp();
 		Thread.sleep(1000);
-		createcamp.Useexistingclienttags();
+		createcamp.schedule();
 		Thread.sleep(1000);
-		header.wHeaderTextandAddVariablewithselectdapointandfallbackvalue();;
+		header.wimage1();
 		Thread.sleep(1000);
-//		body.wselectdatapointandfallbackvalue();
+		devtools.devtools();
+		Thread.sleep(1000);	
+//		
+//		wfnp.whatsapp();
 //		Thread.sleep(1000);
-		buttons.wphonenumberbuttontextcontent();
+//		createcamp.schedule();
+//		Thread.sleep(1000);
+//		header.wvideo1();
+//		Thread.sleep(1000);
+//		devtools.devtools();
+//		Thread.sleep(1000);	
+		
+		wfnp.whatsapp();
+		Thread.sleep(1000);
+		createcamp.schedule();
+		Thread.sleep(1000);
+		header.wdocument1();
 		Thread.sleep(1000);
 		devtools.devtools();
 		Thread.sleep(1000);
-}	
-		@Test(priority = 3)
-		public void Useexistingclienttags3() throws InterruptedException, AWTException {	
+		
 		wfnp.whatsapp();
 		Thread.sleep(1000);
-		createcamp.CreateTag();
+		createcamp.schedule();
 		Thread.sleep(1000);
 		header.wheaderisselectedasnone();
 		Thread.sleep(1000);
-//		body.wselectdatapointandfallbackvalue();
-//		Thread.sleep(1000);
-		buttons.wphonenumberbuttontextcontent();
-		Thread.sleep(1000);
+		body.wselectdatapointandfallbackvalue();
+	    Thread.sleep(1000);
 		devtools.devtools();
 		Thread.sleep(1000);
+
 		wfnp.whatsapp();
 		Thread.sleep(1000);
-		createcamp.CreateTag();
+		createcamp.schedule();
 		Thread.sleep(1000);
-		header.wHeaderTextandAddVariablewithselectdapointandfallbackvalue();;
+		header.wHeaderTextandAddVariablewithselectdapointandfallbackvalue();
 		Thread.sleep(1000);
-//		body.wselectdatapointandfallbackvalue();
+		body.wselectdatapointandfallbackvalue();
+	    Thread.sleep(1000);
+		devtools.devtools();
+		Thread.sleep(1000);
+		
+		wfnp.whatsapp();
+		Thread.sleep(1000);
+		createcamp.schedule();
+		Thread.sleep(1000);
+		header.wimage1();
+		body.wselectdatapointandfallbackvalue();
+	    Thread.sleep(1000);
+		devtools.devtools();
+		Thread.sleep(1000);	
+//		
+//		wfnp.whatsapp();
 //		Thread.sleep(1000);
-		buttons.wphonenumberbuttontextcontent();
+//		createcamp.schedule();
+//		Thread.sleep(1000);
+//		header.wvideo1();
+//		Thread.sleep(1000);
+//		body.wselectdatapointandfallbackvalue();
+//	    Thread.sleep(1000);
+//		devtools.devtools();
+//		Thread.sleep(1000);	
+		
+		wfnp.whatsapp();
 		Thread.sleep(1000);
-		devtools.devtools();	
-	}
+		createcamp.schedule();
+		Thread.sleep(1000);
+		header.wdocument1();
+		Thread.sleep(1000);
+		body.wselectdatapointandfallbackvalue();
+	    Thread.sleep(1000);
+		devtools.devtools();
+		Thread.sleep(1000);
+		
+		wfnp.whatsapp();
+		Thread.sleep(1000);
+		createcamp.schedule();
+		Thread.sleep(1000);
+		header.wheaderisselectedasnone();
+		Thread.sleep(1000);
+		body.wselectdatapointandfallbackvalue();
+	    Thread.sleep(1000);
+	    wfnp.footer();
+	    Thread.sleep(1000);
+		devtools.devtools();
+		Thread.sleep(1000);
+
+		wfnp.whatsapp();
+		Thread.sleep(1000);
+		createcamp.schedule();
+		Thread.sleep(1000);
+		header.wHeaderTextandAddVariablewithselectdapointandfallbackvalue();
+		Thread.sleep(1000);
+		body.wselectdatapointandfallbackvalue();
+	    Thread.sleep(1000);
+	    wfnp.footer();
+	    Thread.sleep(1000);
+		devtools.devtools();
+		Thread.sleep(1000);
+		
+		wfnp.whatsapp();
+		Thread.sleep(1000);
+		createcamp.schedule();
+		Thread.sleep(1000);
+		header.wimage1();
+		body.wselectdatapointandfallbackvalue();
+	    Thread.sleep(1000);
+	    wfnp.footer();
+	    Thread.sleep(1000);
+		devtools.devtools();
+		Thread.sleep(1000);	
+//		
+//		wfnp.whatsapp();
+//		Thread.sleep(1000);
+//		createcamp.schedule();
+//		Thread.sleep(1000);
+//		header.wvideo1();
+//		Thread.sleep(1000);
+//		body.wselectdatapointandfallbackvalue();
+//	    Thread.sleep(1000);
+//		devtools.devtools();
+//		Thread.sleep(1000);	
+		
+		wfnp.whatsapp();
+		Thread.sleep(1000);
+		createcamp.schedule();
+		Thread.sleep(1000);
+		header.wdocument1();
+		Thread.sleep(1000);
+		body.wselectdatapointandfallbackvalue();
+	    Thread.sleep(1000);
+	    wfnp.footer();
+	    Thread.sleep(1000);
+		devtools.devtools();
+		Thread.sleep(1000);
+		
+		
+		
+		
+		
+		
+		
+	}		
 }
