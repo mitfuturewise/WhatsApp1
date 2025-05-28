@@ -4,6 +4,7 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.UUID;
@@ -11,6 +12,8 @@ import java.util.UUID;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -20,6 +23,7 @@ import org.testng.annotations.Test;
 @Listeners(TestListeners.class)
 public class newcampaign extends Login{
 	 private static int campaignCounter = 1;
+	 public static String uniqueCampaignName = "";
 	 wfnp button = new wfnp();
 @Test
 public void newCampaign() throws InterruptedException {
@@ -31,7 +35,8 @@ public void newCampaign() throws InterruptedException {
         campaignCounter = 1;
     }
     // Build the campaign name
-    String uniqueCampaignName = "Campaign_" + campaignCounter;
+    
+	uniqueCampaignName = "Campaign_" + campaignCounter;
     campaignCounter++;
 
     // Locate the campaign input field and send the campaign name
@@ -324,7 +329,7 @@ public void newCampaign() throws InterruptedException {
 	    }
 	    // Build the campaign name
 		int useCaseIndex = 4;
-		String dayToSelect = "23";           // selected day from calendar
+		String dayToSelect = "28";           // selected day from calendar
 		String timeToSelect = "18:00";       // selected time from dropdown
 
 		// Step 2: Current year/month for forming full selected date
@@ -339,7 +344,7 @@ public void newCampaign() throws InterruptedException {
 		String currentTime = LocalTime.now().format(DateTimeFormatter.ofPattern("HHmm")); // → 1542
 
 		// Step 5: Create campaign name
-		String uniqueCampaignName = "Campaign_" + campaignCounter + "_" + formattedSelectedDate + "_" + formattedSelectedTime + "_current" + currentTime;
+	    uniqueCampaignName = "Campaign_" + campaignCounter + "_" + formattedSelectedDate + "_" + formattedSelectedTime + "_current" + currentTime;
 		campaignCounter++;
 	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(25));
 	    // Locate the campaign input field and send the campaign name
@@ -389,5 +394,180 @@ public void newCampaign() throws InterruptedException {
 	    inputField.clear();
 	    inputField.sendKeys(templateName);
 		}
+// public void verifyAndPublishCampaign(WebDriver driver, String uniqueCampaignName) throws InterruptedException {
+//	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+//	    JavascriptExecutor js = (JavascriptExecutor) driver;
+//	    WebElement refreshBtn = driver.findElement(By.xpath("//img[@alt='reload icon']"));
+//        js.executeScript("arguments[0].click();", refreshBtn);
+//        System.out.println("Click successfully.");
+//
+//	    boolean isDraft = true;
+//
+//	    while (isDraft) {
+//	        // 1. Click refresh button
+////	        WebElement refreshBtn = driver.findElement(By.xpath("//img[@alt='reload icon']"));
+////	        js.executeScript("arguments[0].click();", refreshBtn);
+////	        Thread.sleep(3000); // Wait for table to refresh
+//
+//	        // 2. Get all table rows
+//	        List<WebElement> rows = driver.findElements(By.xpath("//table[@id='table-low']/tbody/tr"));
+//	        boolean campaignFound = false;
+//
+//	        for (WebElement row : rows) {
+//	            String campaignName = row.findElement(By.xpath("./td[1]/div/span")).getText().trim();
+//	            String status = row.findElement(By.xpath("./td[4]/div/span")).getText().trim();
+//
+//	            if (campaignName.equals(uniqueCampaignName)) {
+//	                campaignFound = true;
+//
+//	                if (status.equalsIgnoreCase("Draft")) {
+//	                    js.executeScript("arguments[0].click();", row.findElement(By.xpath("./td[4]/div/span")));
+//	                    Thread.sleep(2000);
+//
+//	                    WebElement publishBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Publish')]")));
+//	                    js.executeScript("arguments[0].click();", publishBtn);
+//	                    Thread.sleep(3000);
+//	                } else {
+//	                    isDraft = false; // Exit loop when status is not 'Draft'
+//	                }
+//	                break;
+//	            }
+//	        }
+//
+//	        if (!campaignFound) {
+//	            System.out.println("Campaign not found. Retrying...");
+//	            Thread.sleep(2000);
+//	        }
+//	    }
+//	}
+// public void verifyAndPublishCampaign(WebDriver driver, String uniqueCampaignName) throws InterruptedException {
+//	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+//	    JavascriptExecutor js = (JavascriptExecutor) driver;
+//
+//	    // ✅ Step 1: Click refresh once
+//	    WebElement refreshBtn = driver.findElement(By.xpath("//img[@alt='reload icon']"));
+//	    js.executeScript("arguments[0].click();", refreshBtn);
+//	    Thread.sleep(3000); // wait for the table to reload
+//
+//	    // ✅ Step 2: Search for campaign name and get status
+//	    List<WebElement> rows = driver.findElements(By.xpath("//table[@id='table-low']/tbody/tr"));
+//	    WebElement statusElement = null;
+//	    boolean campaignFound = false;
+//
+//	    for (WebElement row : rows) {
+//	        String campaignName = row.findElement(By.xpath("./td[1]/div/span")).getText().trim();
+//	        if (campaignName.equalsIgnoreCase(uniqueCampaignName)) {
+//	            statusElement = row.findElement(By.xpath("./td[4]/div/span"));
+//	            campaignFound = true;
+//	            break;
+//	        }
+//	    }
+//
+//	    if (!campaignFound || statusElement == null) {
+//	        System.out.println("Campaign not found after refresh.");
+//	        return;
+//	    }
+//
+//	    // ✅ Step 3: Now loop only if status is Draft
+//	    String statusText = statusElement.getText().trim();
+//	    while (statusText.equalsIgnoreCase("Draft")) {
+//	        System.out.println("Campaign is in Draft. Opening for publish...");
+//
+//	        js.executeScript("arguments[0].click();", statusElement);
+//	        Thread.sleep(2000);
+//
+//	        WebElement publishBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Publish')]")));
+//	        js.executeScript("arguments[0].click();", publishBtn);
+//	        Thread.sleep(3000);
+//
+//	        // Click refresh again to reload status
+//	        refreshBtn = driver.findElement(By.xpath("//img[@alt='reload icon']"));
+//	        js.executeScript("arguments[0].click();", refreshBtn);
+//	        Thread.sleep(3000);
+//
+//	        // Check updated status
+//	        rows = driver.findElements(By.xpath("//table[@id='table-low']/tbody/tr"));
+//	        statusElement = null;
+//	        for (WebElement row : rows) {
+//	            String campaignName = row.findElement(By.xpath("./td[1]/div/span")).getText().trim();
+//	            if (campaignName.equalsIgnoreCase(uniqueCampaignName)) {
+//	                statusElement = row.findElement(By.xpath("./td[4]/div/span"));
+//	                statusText = statusElement.getText().trim();
+//	                break;
+//	            }
+//	        }
+//
+//	        if (statusElement == null) {
+//	            System.out.println("Campaign disappeared after refresh. Exiting loop.");
+//	            break;
+//	        }
+//	    }
+//
+//	    System.out.println("Campaign is no longer in Draft. Final status: " + statusText);
+//	}
+ public void verifyAndPublishCampaign(WebDriver driver, String uniqueCampaignName) throws InterruptedException {
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
+	    Thread.sleep(1000);
+	    WebElement refreshBtn = driver.findElement(By.xpath("//img[@alt='reload icon']"));
+        js.executeScript("arguments[0].click();", refreshBtn);
+        Thread.sleep(3000); // wait for table to refresh
+        System.out.println("click");
+	    boolean isDraft = true;
+
+	    while (isDraft) {
+	        // STEP 1: Click the Refresh Button
+//	        WebElement refreshBtn = driver.findElement(By.xpath("//img[@alt='reload icon']"));
+//	        js.executeScript("arguments[0].click();", refreshBtn);
+//	        Thread.sleep(3000); // wait for table to refresh
+
+	        // STEP 2: Re-fetch the rows after each refresh
+	        List<WebElement> rows = driver.findElements(By.xpath("//table[@id='table-low']/tbody/tr"));
+	        boolean campaignFound = false;
+
+	        for (int i = 0; i < rows.size(); i++) {
+	            try {
+	                // Refetch the row every time inside the loop to avoid stale element
+	                WebElement currentRow = driver.findElements(By.xpath("//table[@id='table-low']/tbody/tr")).get(i);
+
+	                String campaignName = currentRow.findElement(By.xpath("./td[1]/div/span")).getText().trim();
+	                String status = currentRow.findElement(By.xpath("./td[4]/div/span")).getText().trim();
+	                System.out.println("Comparing → page: '" + campaignName + "' vs expected: '" + uniqueCampaignName + "'");
+
+	                if (campaignName.trim().equalsIgnoreCase(uniqueCampaignName.trim())) {
+	                    campaignFound = true;
+
+	                    System.out.println("Campaign Found: " + campaignName + " with Status: " + status);
+
+	                    if (status.equalsIgnoreCase("Draft")) {
+	                        js.executeScript("arguments[0].click();", currentRow.findElement(By.xpath("./td[4]/div/span")));
+	                        Thread.sleep(2000);
+	                        WebElement publishBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='textZindex']")));
+	                        js.executeScript("arguments[0].click();", publishBtn);
+	                        
+	                        WebElement publishBtn1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Publish')]")));
+	                        js.executeScript("arguments[0].click();", publishBtn);
+	                        Thread.sleep(3000);
+	                    } else {
+	                        isDraft = false;
+	                    }
+
+	                    break; // No need to check more rows
+	                }
+
+	            } catch (StaleElementReferenceException e) {
+	                System.out.println("Stale element encountered. Skipping row.");
+	                continue;
+	            }
+	        }
+
+	        if (!campaignFound) {
+	            System.out.println("Campaign not found. Retrying...");
+	            Thread.sleep(2000);
+	        }
+	    }
+	}
+
+
 }
 
