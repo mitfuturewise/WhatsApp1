@@ -10,6 +10,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+
+
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
@@ -43,87 +45,48 @@ public class Useexistingclienttags extends Login{
 	Buttons buttons = new Buttons();
 	devtools devtools = new devtools();
 	private final String expectedUrlBase = "https://staging.ifanow.in/futurewise/api/v1/web/whatsapp/campaign/create/template/onFly?";
-//	@Test(priority = 1)
-//	public void Useexistingclienttags() throws InterruptedException, AWTException {
-//		TestListeners.setDriver(driver);
-//		wfnp.whatsapp();
-//		Thread.sleep(1000);
-//		createcamp.createNewCampaignFlow();
-//		Thread.sleep(1000);
-//		header.headerisselectedasnone();
-//		Thread.sleep(1000);
-//		body.selectdatapointandfallbackvalue();
-//		Thread.sleep(1000);
-//		buttons.phonenumberbuttontextcontent();
-//		Thread.sleep(1000);
-//		devtools.devtools();
-//		Thread.sleep(1000);
-//		wfnp.whatsapp();
-//		Thread.sleep(1000);
-//		createcamp.createNewCampaignFlow();
-//		Thread.sleep(1000);
-//		header.HeaderTextandAddVariablewithselectdapointandfallbackvalue();
-//		Thread.sleep(1000);
-//		body.selectdatapointandfallbackvalue();
-//		Thread.sleep(1000);
-//		buttons.phonenumberbuttontextcontent();
-//		Thread.sleep(1000);
-//		devtools.devtools();
-//		Thread.sleep(1000);	
-//	}		
-		@Test(priority = 2)
-		public void Useexistingclienttags1() throws InterruptedException, AWTException {	
-		TestListeners.setDriver(driver);
-		wfnp.whatsapp();
-		Thread.sleep(1000);
-		createcamp.Useexistingclienttags();
-		Thread.sleep(1000);
-		header.headerisselectedasnone();
-		Thread.sleep(1000);
-		body.selectdatapointandfallbackvalue();
-		Thread.sleep(1000);
-		buttons.phonenumberbuttontextcontent();
-		Thread.sleep(1000);
-		devtools.devtools();
-//		Thread.sleep(1000);
-//		wfnp.whatsapp();
-//		Thread.sleep(1000);
-//		createcamp.Useexistingclienttags();
-//		Thread.sleep(1000);
-//		header.HeaderTextandAddVariablewithselectdapointandfallbackvalue();;
-//		Thread.sleep(1000);
-//		body.selectdatapointandfallbackvalue();
-//		Thread.sleep(1000);
-//		buttons.phonenumberbuttontextcontent();
-//		Thread.sleep(1000);
-//		devtools.devtools();
-//		Thread.sleep(1000);
-}	
-//		@Test(priority = 3)
-//		public void Useexistingclienttags3() throws InterruptedException, AWTException {	
-//		TestListeners.setDriver(driver);
-//		wfnp.whatsapp();
-//		Thread.sleep(1000);
-//		createcamp.CreateTag();
-//		Thread.sleep(1000);
-//		header.headerisselectedasnone();
-//		Thread.sleep(1000);
-//		body.selectdatapointandfallbackvalue();
-//		Thread.sleep(1000);
-//		buttons.phonenumberbuttontextcontent();
-//		Thread.sleep(1000);
-//		devtools.devtools();
-//		Thread.sleep(1000);
-//		wfnp.whatsapp();
-//		Thread.sleep(1000);
-//		createcamp.CreateTag();
-//		Thread.sleep(1000);
-//		header.HeaderTextandAddVariablewithselectdapointandfallbackvalue();;
-//		Thread.sleep(1000);
-//		body.selectdatapointandfallbackvalue();
-//		Thread.sleep(1000);
-//		buttons.phonenumberbuttontextcontent();
-//		Thread.sleep(1000);
-//		devtools.devtools();	
-//	}
+
+		@Test(priority = 4)
+		public void Useexistingclienttags4() throws InterruptedException, AWTException {
+			TestListeners.setDriver(driver);
+//			wfnp.whatsapp();
+//			Thread.sleep(1000);
+//			createcamp.schedule();
+//			Thread.sleep(1000);
+//			header.image1();
+//			Thread.sleep(1000);
+//			body.selectdatapointandfallbackvalue();
+//		    Thread.sleep(1000);
+//			devtools.devtools();
+//			Thread.sleep(1000);	
+//			createcamp.verifyAndPublishCampaign(driver, newcampaign.uniqueCampaignName);
+//			Thread.sleep(1000);
+//			
+//			wfnp.whatsapp();
+//			Thread.sleep(1000);
+//			createcamp.schedule();
+//			Thread.sleep(1000);
+//			header.video1();
+//			Thread.sleep(1000);
+//			body.selectdatapointandfallbackvalue();
+//		    Thread.sleep(1000);
+//			devtools.devtools();
+//			createcamp.verifyAndPublishCampaign(driver, newcampaign.uniqueCampaignName);
+//			Thread.sleep(1000);
+			
+			
+			wfnp.whatsapp();
+			Thread.sleep(1000);
+			createcamp.schedule();
+			Thread.sleep(1000);
+			header.document1();
+			Thread.sleep(1000);
+			body.selectdatapointandfallbackvalue();
+		    Thread.sleep(1000);
+			devtools.devtools();
+			Thread.sleep(1000);
+			createcamp.verifyAndPublishCampaign(driver, newcampaign.uniqueCampaignName);
+			Thread.sleep(1000);
+			
+		}	
 }

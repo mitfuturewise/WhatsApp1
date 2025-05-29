@@ -146,6 +146,8 @@ public class Useexistingclienttags extends Login{
 		Thread.sleep(1000);
 		devtools.devtools();
 		Thread.sleep(1000);
+		createcamp.verifyAndPublishCampaign(driver, newcampaign.uniqueCampaignName);
+		Thread.sleep(1000);
 		
 		wfnp.whatsapp();
 		Thread.sleep(1000);
@@ -155,6 +157,8 @@ public class Useexistingclienttags extends Login{
 		Thread.sleep(1000);
 		devtools.devtools();
 		Thread.sleep(1000);	
+		createcamp.verifyAndPublishCampaign(driver, newcampaign.uniqueCampaignName);
+		Thread.sleep(1000);
 //		
 //		wfnp.whatsapp();
 //		Thread.sleep(1000);
@@ -173,6 +177,8 @@ public class Useexistingclienttags extends Login{
 		Thread.sleep(1000);
 		devtools.devtools();
 		Thread.sleep(1000);
+		createcamp.verifyAndPublishCampaign(driver, newcampaign.uniqueCampaignName);
+		Thread.sleep(1000);
 		
 		wfnp.whatsapp();
 		Thread.sleep(1000);
@@ -183,6 +189,8 @@ public class Useexistingclienttags extends Login{
 		body.wselectdatapointandfallbackvalue();
 	    Thread.sleep(1000);
 		devtools.devtools();
+		Thread.sleep(1000);
+		createcamp.verifyAndPublishCampaign(driver, newcampaign.uniqueCampaignName);
 		Thread.sleep(1000);
 
 		wfnp.whatsapp();
@@ -195,6 +203,8 @@ public class Useexistingclienttags extends Login{
 	    Thread.sleep(1000);
 		devtools.devtools();
 		Thread.sleep(1000);
+		createcamp.verifyAndPublishCampaign(driver, newcampaign.uniqueCampaignName);
+		Thread.sleep(1000);
 		
 		wfnp.whatsapp();
 		Thread.sleep(1000);
@@ -205,6 +215,8 @@ public class Useexistingclienttags extends Login{
 	    Thread.sleep(1000);
 		devtools.devtools();
 		Thread.sleep(1000);	
+		createcamp.verifyAndPublishCampaign(driver, newcampaign.uniqueCampaignName);
+		Thread.sleep(1000);
 //		
 //		wfnp.whatsapp();
 //		Thread.sleep(1000);
@@ -227,6 +239,8 @@ public class Useexistingclienttags extends Login{
 	    Thread.sleep(1000);
 		devtools.devtools();
 		Thread.sleep(1000);
+		createcamp.verifyAndPublishCampaign(driver, newcampaign.uniqueCampaignName);
+		Thread.sleep(1000);
 		
 		wfnp.whatsapp();
 		Thread.sleep(1000);
@@ -239,6 +253,8 @@ public class Useexistingclienttags extends Login{
 	    wfnp.footer();
 	    Thread.sleep(1000);
 		devtools.devtools();
+		Thread.sleep(1000);
+		createcamp.verifyAndPublishCampaign(driver, newcampaign.uniqueCampaignName);
 		Thread.sleep(1000);
 
 		wfnp.whatsapp();
@@ -253,6 +269,8 @@ public class Useexistingclienttags extends Login{
 	    Thread.sleep(1000);
 		devtools.devtools();
 		Thread.sleep(1000);
+		createcamp.verifyAndPublishCampaign(driver, newcampaign.uniqueCampaignName);
+		Thread.sleep(1000);
 		
 		wfnp.whatsapp();
 		Thread.sleep(1000);
@@ -265,6 +283,8 @@ public class Useexistingclienttags extends Login{
 	    Thread.sleep(1000);
 		devtools.devtools();
 		Thread.sleep(1000);	
+		createcamp.verifyAndPublishCampaign(driver, newcampaign.uniqueCampaignName);
+		Thread.sleep(1000);
 //		
 //		wfnp.whatsapp();
 //		Thread.sleep(1000);
@@ -288,13 +308,9 @@ public class Useexistingclienttags extends Login{
 	    wfnp.footer();
 	    Thread.sleep(1000);
 		devtools.devtools();
+		Thread.sleep(1000);	
+		createcamp.verifyAndPublishCampaign(driver, newcampaign.uniqueCampaignName);
 		Thread.sleep(1000);
-		
-		
-		
-		
-		
-		
 		
 	}		
 }

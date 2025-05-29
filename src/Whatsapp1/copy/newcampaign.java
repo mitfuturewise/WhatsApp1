@@ -329,7 +329,7 @@ public void newCampaign() throws InterruptedException {
 	    }
 	    // Build the campaign name
 		int useCaseIndex = 4;
-		String dayToSelect = "28";           // selected day from calendar
+		String dayToSelect = "29";           // selected day from calendar
 		String timeToSelect = "18:00";       // selected time from dropdown
 
 		// Step 2: Current year/month for forming full selected date
@@ -542,11 +542,12 @@ public void newCampaign() throws InterruptedException {
 	                    if (status.equalsIgnoreCase("Draft")) {
 	                        js.executeScript("arguments[0].click();", currentRow.findElement(By.xpath("./td[4]/div/span")));
 	                        Thread.sleep(2000);
-	                        WebElement publishBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='textZindex']")));
+	                        WebElement publishBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@type=\"undefined\"]")));
 	                        js.executeScript("arguments[0].click();", publishBtn);
+	                        Thread.sleep(3000);
 	                        
-	                        WebElement publishBtn1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Publish')]")));
-	                        js.executeScript("arguments[0].click();", publishBtn);
+	                        WebElement publishBtn11 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Publish')]")));
+	                        js.executeScript("arguments[0].click();", publishBtn11);
 	                        Thread.sleep(3000);
 	                    } else {
 	                        isDraft = false;

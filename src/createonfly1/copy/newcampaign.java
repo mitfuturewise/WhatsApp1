@@ -1,7 +1,9 @@
 package createonfly1.copy;
 
 import java.time.Duration;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Random;
@@ -10,18 +12,23 @@ import java.util.UUID;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import Whatsapp1.copy.TestListeners;
+
 @Listeners(TestListeners.class)
 public class newcampaign extends Login{
 	 private static int campaignCounter = 1;
+	 public static String uniqueCampaignName = "";
 	 wfnp button = new wfnp();
 @Test
- public void createNewCampaignFlow() throws InterruptedException {
+ public void newCampaign() throws InterruptedException {
 		TestListeners.setDriver(driver);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		driver.findElement(By.xpath("//span[contains(.,\"New Campaign\")]")).click();//new campaign
@@ -268,5 +275,161 @@ public static String generateUniqueTemplateName(int length) {
 	    inputField.clear();
 	    inputField.sendKeys(templateName);
 		}
+ @Test
+ public void schedule() throws InterruptedException {
+		TestListeners.setDriver(driver);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		driver.findElement(By.xpath("//span[contains(.,\"New Campaign\")]")).click();//new campaign
+		//enter campaign name
+		if (campaignCounter > 100) {
+	        campaignCounter = 1;
+	    }
+	    // Build the campaign name
+		int useCaseIndex = 31;
+		String dayToSelect = "29";           // selected day from calendar
+		String timeToSelect = "18:00";       // selected time from dropdown
+
+		// Step 2: Current year/month for forming full selected date
+		int year = LocalDate.now().getYear();
+		int month = LocalDate.now().getMonthValue();
+		String formattedSelectedDate = String.format("%04d-%02d-%02d", year, month, Integer.parseInt(dayToSelect));  // e.g. 2025-05-23
+
+		// Step 3: Format selected time (remove colon)
+		String formattedSelectedTime = timeToSelect.replace(":", "");  // → 1600
+
+		// Step 4: Get current system time
+		String currentTime = LocalTime.now().format(DateTimeFormatter.ofPattern("HHmm")); // → 1542
+
+		// Step 5: Create campaign name
+	    uniqueCampaignName = "Campaign_" + campaignCounter + "_" + formattedSelectedDate + "_" + formattedSelectedTime + "_current" + currentTime;
+		campaignCounter++;
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(25));
+	    // Locate the campaign input field and send the campaign name
+	    driver.findElement(By.xpath("//input[@aria-required='true']")).sendKeys(uniqueCampaignName);
+		driver.findElement(By.xpath("(//span[@class=\"mat-radio-inner-circle\"])[2]")).click();//select one time radio button
+		driver.findElement(By.xpath("(//button[contains(text(),\"NEXT STEP\")])")).click();//click on next step
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("(//mat-select[@aria-required=\"true\"])[1]")).click();	//click dropdown button of  use case
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("(//span[@class='mat-option-text'])[" + useCaseIndex + "]")).click();//select use case
+		Thread.sleep(1000);
+		WebElement toggle = driver.findElement(By.xpath("//span[@class='mat-slide-toggle-bar']"));
+
+		// Scroll into view first using JavaScript
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", toggle);
+
+		// Small pause to allow scrolling to finish (optional but helps)
+		Thread.sleep(500);
+
+		// Then click it
+		toggle.click();
+		Thread.sleep(1000);
+//		String dayToSelect = "23"; // or any day
+		driver.findElement(By.xpath("//input[@formcontrolname='manualDate']")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//div[contains(@class,'mat-calendar-body-cell-content') and normalize-space(text())='" + dayToSelect + "']")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//mat-select[@formcontrolname='manualTime']")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//span[@class='mat-option-text' and normalize-space(text())='" + timeToSelect + "']")).click();
+//		driver.findElement(By.xpath("//mat-select[@formcontrolname=\"manualTime\"]")).click();
+		Thread.sleep(1000);
+//		driver.findElement(By.xpath("(//input[@aria-required=\"true\"])")).click();//click on calender to select date
+		driver.findElement(By.xpath("(//button[contains(.,\"NEXT STEP\")])")).click();//click next step(use case selection)
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("(//label[@class=\"mat-radio-label\"])[2]")).click();//select use existing client tags
+		Thread.sleep(1000);
+		WebElement search = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//input[@placeholder=\"Search\"])")));;
+		search.sendKeys("whatsapp");
+		WebElement whatsapp = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(),'whatsapp')]")));
+		WebElement whatsapp1 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'whatsapp')]/ancestor::tr//label[@class='mat-checkbox-layout']")));
+        whatsapp1.click();
+//		driver.findElement(By.xpath("(//label[@class=\"mat-checkbox-layout\"])[1]")).click();
+//		Thread.sleep(1000);
+//		driver.findElement(By.xpath("(//label[@class=\"mat-checkbox-layout\"])[2]")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//button[contains(text(),\"NEXT STEP\")]")).click();//click next step (Audience selection)
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//p[contains(text(),\"Modify Template\")]")).click();//modify template
+		WebElement modifyTemplateButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[contains(.,\"Create on the Fly\")]")));
+
+        // ✅ Scroll into view before clicking
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", modifyTemplateButton);
+        Thread.sleep(500);  // Allow time for scrolling
+
+        // ✅ Click using JavaScript (if normal click fails)
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", modifyTemplateButton);
+        String templateName = generateUniqueTemplateName(20);
+	    
+	    // Locate the input field using the XPath and enter the unique template name
+	    WebElement inputField = driver.findElement(By.xpath("//input[@formcontrolname='templateName']"));
+	    inputField.clear();
+	    inputField.sendKeys(templateName);
+        
+		}
+
+ public void verifyAndPublishCampaign(WebDriver driver, String uniqueCampaignName) throws InterruptedException {
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
+	    Thread.sleep(1000);
+	    WebElement refreshBtn = driver.findElement(By.xpath("//img[@alt='reload icon']"));
+        js.executeScript("arguments[0].click();", refreshBtn);
+        Thread.sleep(3000); // wait for table to refresh
+        System.out.println("click");
+	    boolean isDraft = true;
+
+	    while (isDraft) {
+	        // STEP 1: Click the Refresh Button
+//	        WebElement refreshBtn = driver.findElement(By.xpath("//img[@alt='reload icon']"));
+//	        js.executeScript("arguments[0].click();", refreshBtn);
+//	        Thread.sleep(3000); // wait for table to refresh
+
+	        // STEP 2: Re-fetch the rows after each refresh
+	        List<WebElement> rows = driver.findElements(By.xpath("//table[@id='table-low']/tbody/tr"));
+	        boolean campaignFound = false;
+
+	        for (int i = 0; i < rows.size(); i++) {
+	            try {
+	                // Refetch the row every time inside the loop to avoid stale element
+	                WebElement currentRow = driver.findElements(By.xpath("//table[@id='table-low']/tbody/tr")).get(i);
+
+	                String campaignName = currentRow.findElement(By.xpath("./td[1]/div/span")).getText().trim();
+	                String status = currentRow.findElement(By.xpath("./td[4]/div/span")).getText().trim();
+	                System.out.println("Comparing → page: '" + campaignName + "' vs expected: '" + uniqueCampaignName + "'");
+
+	                if (campaignName.trim().equalsIgnoreCase(uniqueCampaignName.trim())) {
+	                    campaignFound = true;
+
+	                    System.out.println("Campaign Found: " + campaignName + " with Status: " + status);
+
+	                    if (status.equalsIgnoreCase("Draft")) {
+	                        js.executeScript("arguments[0].click();", currentRow.findElement(By.xpath("./td[4]/div/span")));
+	                        Thread.sleep(2000);
+	                        WebElement publishBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@type=\"undefined\"]")));
+	                        js.executeScript("arguments[0].click();", publishBtn);
+	                        Thread.sleep(3000);
+	                        
+	                        WebElement publishBtn11 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Publish')]")));
+	                        js.executeScript("arguments[0].click();", publishBtn11);
+	                        Thread.sleep(3000);
+	                    } else {
+	                        isDraft = false;
+	                    }
+
+	                    break; // No need to check more rows
+	                }
+
+	            } catch (StaleElementReferenceException e) {
+	                System.out.println("Stale element encountered. Skipping row.");
+	                continue;
+	            }
+	        }
+
+	        if (!campaignFound) {
+	            System.out.println("Campaign not found. Retrying...");
+	            Thread.sleep(2000);
+	        }
+	    }
+	}
 	 
 }
