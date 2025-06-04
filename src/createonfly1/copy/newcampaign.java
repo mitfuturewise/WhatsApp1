@@ -37,9 +37,9 @@ public class newcampaign extends Login{
 	        campaignCounter = 1;
 	    }
 	    // Build the campaign name
-	    String uniqueCampaignName = "Campaign_" + campaignCounter;
+	    uniqueCampaignName = "Campaign_" + campaignCounter;
 	    campaignCounter++;
-
+	    int useCaseIndex = 31;
 	    // Locate the campaign input field and send the campaign name
 	    driver.findElement(By.xpath("//input[@aria-required='true']")).sendKeys(uniqueCampaignName);
 		driver.findElement(By.xpath("(//span[@class=\"mat-radio-inner-circle\"])[2]")).click();//select one time radio button
@@ -47,7 +47,7 @@ public class newcampaign extends Login{
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("(//mat-select[@aria-required=\"true\"])[1]")).click();	//click dropdown button of  use case
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("(//span[@class=\"mat-option-text\"])[2]")).click();//select use case
+		driver.findElement(By.xpath("(//span[@class='mat-option-text'])[" + useCaseIndex + "]")).click();//select use case
 //		Thread.sleep(1000);
 //		driver.findElement(By.xpath("(//input[@aria-required=\"true\"])")).click();//click on calender to select date
 		driver.findElement(By.xpath("(//button[contains(.,\"NEXT STEP\")])")).click();//click next step(use case selection)
@@ -286,7 +286,7 @@ public static String generateUniqueTemplateName(int length) {
 	    }
 	    // Build the campaign name
 		int useCaseIndex = 31;
-		String dayToSelect = "29";           // selected day from calendar
+		String dayToSelect = "3";           // selected day from calendar
 		String timeToSelect = "18:00";       // selected time from dropdown
 
 		// Step 2: Current year/month for forming full selected date

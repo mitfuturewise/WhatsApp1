@@ -20,7 +20,7 @@ import org.testng.Reporter;
 
 
 public class devtools extends Login {
-	public final String expectedUrlBase = "https://staging.ifanow.in/futurewise/api/v1/web/whatsapp/campaign/create/template/onFly?";
+	public final String expectedUrlBase = "https://apis.ifanow.com/futurewise/api/v2/web/whatsapp/campaign/create/template/onFly?";
 	public AtomicInteger responseStatus = new AtomicInteger(-1);
 	public int getResponseStatus() {
         return responseStatus.get();

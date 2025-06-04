@@ -26,7 +26,7 @@ public class body extends Login {
 	newcampaign createcamp = new newcampaign();
 	wfnp wfnp = new wfnp();
 	bodytext bodytext = new bodytext();
-    public final String expectedUrlBase = "https://staging.ifanow.in/futurewise/api/v1/web/whatsapp/campaign/create/template/onFly?";
+    public final String expectedUrlBase = "https://apis.ifanow.com/futurewise/api/v2/web/whatsapp/campaign/create/template/onFly?";
 	
     @Test(priority = 1)
 	public void addvariable() throws InterruptedException, AWTException {
@@ -131,6 +131,96 @@ public class body extends Login {
 		                break;
 		            case 10:
 		                updatedText = updatedText.replaceFirst("\\{\\{10\\}\\}", selectedText + " - {{10}}");
+		                break;
+		            case 11:
+		                updatedText = updatedText.replaceFirst("\\{\\{11\\}\\}", selectedText + " - {{11}}");
+		                break;
+		            case 12:
+		                updatedText = updatedText.replaceFirst("\\{\\{12\\}\\}", selectedText + " - {{12}}");
+		                break;
+		            case 13:
+		                updatedText = updatedText.replaceFirst("\\{\\{13\\}\\}", selectedText + " - {{13}}");
+		                break;
+		            case 14:
+		                updatedText = updatedText.replaceFirst("\\{\\{14\\}\\}", selectedText + " - {{14}}");
+		                break;
+		            case 15:
+		                updatedText = updatedText.replaceFirst("\\{\\{15\\}\\}", selectedText + " - {{15}}");
+		                break;
+		            case 16:
+		                updatedText = updatedText.replaceFirst("\\{\\{16\\}\\}", selectedText + " - {{16}}");
+		                break;
+		            case 17:
+		                updatedText = updatedText.replaceFirst("\\{\\{17\\}\\}", selectedText + " - {{17}}");
+		                break;
+		            case 18:
+		                updatedText = updatedText.replaceFirst("\\{\\{18\\}\\}", selectedText + " - {{18}}");
+		                break;
+		            case 19:
+		                updatedText = updatedText.replaceFirst("\\{\\{19\\}\\}", selectedText + " - {{19}}");
+		                break;
+		            case 20:
+		                updatedText = updatedText.replaceFirst("\\{\\{20\\}\\}", selectedText + " - {{20}}");
+		                break;
+		            case 21:
+		                updatedText = updatedText.replaceFirst("\\{\\{21\\}\\}", selectedText + " - {{21}}");
+		                break;
+		            case 22:
+		                updatedText = updatedText.replaceFirst("\\{\\{22\\}\\}", selectedText + " - {{22}}");
+		                break;
+		            case 23:
+		                updatedText = updatedText.replaceFirst("\\{\\{23\\}\\}", selectedText + " - {{23}}");
+		                break;
+		            case 24:
+		                updatedText = updatedText.replaceFirst("\\{\\{24\\}\\}", selectedText + " - {{24}}");
+		                break;
+		            case 25:
+		                updatedText = updatedText.replaceFirst("\\{\\{25\\}\\}", selectedText + " - {{25}}");
+		                break;
+		            case 26:
+		                updatedText = updatedText.replaceFirst("\\{\\{26\\}\\}", selectedText + " - {{26}}");
+		                break;
+		            case 27:
+		                updatedText = updatedText.replaceFirst("\\{\\{27\\}\\}", selectedText + " - {{27}}");
+		                break;
+		            case 28:
+		                updatedText = updatedText.replaceFirst("\\{\\{28\\}\\}", selectedText + " - {{28}}");
+		                break;
+		            case 29:
+		                updatedText = updatedText.replaceFirst("\\{\\{29\\}\\}", selectedText + " - {{29}}");
+		                break;
+		            case 30:
+		                updatedText = updatedText.replaceFirst("\\{\\{30\\}\\}", selectedText + " - {{30}}");
+		                break;
+		            case 31:
+		                updatedText = updatedText.replaceFirst("\\{\\{31\\}\\}", selectedText + " - {{31}}");
+		                break;
+		            case 32:
+		                updatedText = updatedText.replaceFirst("\\{\\{32\\}\\}", selectedText + " - {{32}}");
+		                break;
+		            case 33:
+		                updatedText = updatedText.replaceFirst("\\{\\{33\\}\\}", selectedText + " - {{33}}");
+		                break;
+		            case 34:
+		                updatedText = updatedText.replaceFirst("\\{\\{34\\}\\}", selectedText + " - {{34}}");
+		                break;
+		            case 35:
+		                updatedText = updatedText.replaceFirst("\\{\\{35\\}\\}", selectedText + " - {{35}}");
+		                break;
+		            case 36:
+		                updatedText = updatedText.replaceFirst("\\{\\{36\\}\\}", selectedText + " - {{36}}");
+		                break;
+		            case 37:
+		                updatedText = updatedText.replaceFirst("\\{\\{37\\}\\}", selectedText + " - {{37}}");
+		                break;
+		            case 38:
+		                updatedText = updatedText.replaceFirst("\\{\\{38\\}\\}", selectedText + " - {{38}}");
+		                break;
+		            case 39:
+		                updatedText = updatedText.replaceFirst("\\{\\{39\\}\\}", selectedText + " - {{39}}");
+		                break;
+		            case 40:
+		                updatedText = updatedText.replaceFirst("\\{\\{40\\}\\}", selectedText + " - {{40}}");
 		                break;
 		            // Add more cases if you have more placeholders to replace
 		        }

@@ -21,7 +21,7 @@ public class body extends Login {
 	newcampaign createcamp = new newcampaign();
 	wfnp wfnp = new wfnp();
 	devtools devtools = new devtools();
-    public final String expectedUrlBase = "https://staging.ifanow.in/futurewise/api/v2/web/whatsapp/campaign/create/template/onFly?";
+    public final String expectedUrlBase = "https://apis.ifanow.com/futurewise/api/v2/web/whatsapp/campaign/create/template/onFly?";
 	
     @Test(priority = 1)
 	public void waddvariable() throws InterruptedException, AWTException {

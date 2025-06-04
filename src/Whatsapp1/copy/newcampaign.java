@@ -38,7 +38,8 @@ public void newCampaign() throws InterruptedException {
     
 	uniqueCampaignName = "Campaign_" + campaignCounter;
     campaignCounter++;
-
+    
+    int useCaseIndex = 31;
     // Locate the campaign input field and send the campaign name
     driver.findElement(By.xpath("//input[@aria-required='true']")).sendKeys(uniqueCampaignName);
 	driver.findElement(By.xpath("(//span[@class=\"mat-radio-inner-circle\"])[2]")).click();//select one time radio button
@@ -46,7 +47,7 @@ public void newCampaign() throws InterruptedException {
 	Thread.sleep(1000);
 	driver.findElement(By.xpath("(//mat-select[@aria-required=\"true\"])[1]")).click();	//click dropdown button of  use case
 	Thread.sleep(1000);
-	driver.findElement(By.xpath("(//span[@class=\"mat-option-text\"])[2]")).click();//select use case
+	driver.findElement(By.xpath("(//span[@class='mat-option-text'])[" + useCaseIndex + "]")).click();//select use case
 //	Thread.sleep(1000);
 //	driver.findElement(By.xpath("(//input[@aria-required=\"true\"])")).click();//click on calender to select date
 	driver.findElement(By.xpath("(//button[contains(.,\"NEXT STEP\")])")).click();//click next step(use case selection)
@@ -327,10 +328,11 @@ public void newCampaign() throws InterruptedException {
 		if (campaignCounter > 100) {
 	        campaignCounter = 1;
 	    }
-	    // Build the campaign name
-		int useCaseIndex = 4;
-		String dayToSelect = "29";           // selected day from calendar
-		String timeToSelect = "18:00";       // selected time from dropdown
+	    // Build the campaign nameC:\Users\HP\Documents\ifanow\whatsapp Apis\image.jpg
+		
+		int useCaseIndex = 31;
+		String dayToSelect = "3";           // selected day from calendar
+		String timeToSelect = "17:00";       // selected time from dropdown
 
 		// Step 2: Current year/month for forming full selected date
 		int year = LocalDate.now().getYear();
