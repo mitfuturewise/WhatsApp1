@@ -412,6 +412,8 @@ public static String generateUniqueTemplateName(int length) {
 	                        WebElement publishBtn11 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Publish')]")));
 	                        js.executeScript("arguments[0].click();", publishBtn11);
 	                        Thread.sleep(3000);
+	                        WebElement refreshBtn1 = driver.findElement(By.xpath("//img[@alt='reload icon']"));
+	                        js.executeScript("arguments[0].click();", refreshBtn1);
 	                    } else {
 	                        isDraft = false;
 	                    }
