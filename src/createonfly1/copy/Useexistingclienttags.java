@@ -50,6 +50,35 @@ public class Useexistingclienttags extends Login{
 		@Test(priority = 4)
 		public void Useexistingclienttags4() throws InterruptedException, AWTException {
 			TestListeners.setDriver(driver);
+			
+			wfnp.whatsapp();
+			Thread.sleep(1000);
+			createcamp.newCampaign();
+			Thread.sleep(1000);
+			header.headerisselectedasnone();
+			Thread.sleep(1000);
+			body.selectdatapointandfallbackvalue();
+		    Thread.sleep(1000);
+			devtools.devtools();
+			Thread.sleep(1000);
+			createcamp.verifyAndPublishCampaign(driver, newcampaign.uniqueCampaignName);
+			Thread.sleep(1000);
+			
+			
+			wfnp.whatsapp();
+			Thread.sleep(1000);
+			createcamp.newCampaign();
+			Thread.sleep(1000);
+			header.HeaderTextandAddVariablewithselectdapointandfallbackvalue();
+			Thread.sleep(1000);
+			body.selectdatapointandfallbackvalue();
+		    Thread.sleep(1000);
+			devtools.devtools();
+			Thread.sleep(1000);
+			createcamp.verifyAndPublishCampaign(driver, newcampaign.uniqueCampaignName);
+			Thread.sleep(1000);
+			
+			
 			wfnp.whatsapp();
 			Thread.sleep(1000);
 			createcamp.newCampaign();
@@ -90,10 +119,32 @@ public class Useexistingclienttags extends Login{
 			createcamp.verifyAndPublishCampaign(driver, newcampaign.uniqueCampaignName);
 			Thread.sleep(1000);
 			
+			wfnp.whatsapp();
+			Thread.sleep(1000);
+			createcamp.schedule();
+			Thread.sleep(1000);
+			header.headerisselectedasnone();
+			Thread.sleep(1000);
+			body.selectdatapointandfallbackvalue();
+		    Thread.sleep(1000);
+			devtools.devtools();
+			Thread.sleep(1000);
+			createcamp.verifyAndPublishCampaign(driver, newcampaign.uniqueCampaignName);
+			Thread.sleep(1000);
 			
 			
-			
-			
+			wfnp.whatsapp();
+			Thread.sleep(1000);
+			createcamp.schedule();
+			Thread.sleep(1000);
+			header.HeaderTextandAddVariablewithselectdapointandfallbackvalue();
+			Thread.sleep(1000);
+			body.selectdatapointandfallbackvalue();
+		    Thread.sleep(1000);
+			devtools.devtools();
+			Thread.sleep(1000);
+			createcamp.verifyAndPublishCampaign(driver, newcampaign.uniqueCampaignName);
+			Thread.sleep(1000);	
 			wfnp.whatsapp();
 			Thread.sleep(1000);
 			createcamp.schedule();

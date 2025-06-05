@@ -32,6 +32,8 @@ import Whatsapp.newcampaign;
 public class header extends Login{
 newcampaign createcamp = new newcampaign();
 wfnp wfnp = new wfnp();
+changes change = new changes();
+
 private final String expectedUrlBase = "https://apis.ifanow.com/futurewise/api/v2/web/whatsapp/campaign/create/template/onFly?";
 @Test(priority = 1)
 public void wheaderisselectedasnone() throws InterruptedException, AWTException {
@@ -128,7 +130,7 @@ public void wimage1() throws InterruptedException, AWTException {
 	Thread.sleep(1000);
 	driver.findElement(By.xpath("//button[contains(.,\"Upload\")]")).click();
 	Robot robot = new Robot();
-	StringSelection selection = new StringSelection("C:\\Users\\HP\\Documents\\ifanow\\whatsapp Apis\\image.jpg");
+	StringSelection selection = new StringSelection( change.getImagePath());
     Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, null);
     
     // Paste the file path: CTRL+V
@@ -163,7 +165,7 @@ public void wvideo1() throws InterruptedException, AWTException {
 	Thread.sleep(1000);
 	driver.findElement(By.xpath("//button[contains(.,\"Upload\")]")).click();
 	Robot robot = new Robot();
-	StringSelection selection = new StringSelection("C:\\Users\\HP\\Documents\\ifanow\\whatsapp Apis\\Video.mp4");
+	StringSelection selection = new StringSelection(change.getVideoPath());
     Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, null);
     
     // Paste the file path: CTRL+V
@@ -198,7 +200,7 @@ public void wdocument1() throws InterruptedException, AWTException {
 	Thread.sleep(1000);
 	driver.findElement(By.xpath("//button[contains(.,\"Upload\")]")).click();
 	Robot robot = new Robot();
-	StringSelection selection = new StringSelection("C:\\Users\\HP\\Documents\\ifanow\\whatsapp Apis\\document.pdf");
+	StringSelection selection = new StringSelection( change.getDocPath());
     Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, null);
     
     // Paste the file path: CTRL+VC:\Users\HP\Documents\ifanow\whatsapp Apis\document.pdf

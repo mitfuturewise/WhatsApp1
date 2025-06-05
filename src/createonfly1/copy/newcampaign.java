@@ -20,13 +20,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import Whatsapp1.copy.TestListeners;
 
 @Listeners(TestListeners.class)
 public class newcampaign extends Login{
 	 private static int campaignCounter = 1;
 	 public static String uniqueCampaignName = "";
 	 wfnp button = new wfnp();
+	 changes getData=new changes();
 @Test
  public void newCampaign() throws InterruptedException {
 		TestListeners.setDriver(driver);
@@ -285,9 +285,9 @@ public static String generateUniqueTemplateName(int length) {
 	        campaignCounter = 1;
 	    }
 	    // Build the campaign name
-		int useCaseIndex = 31;
-		String dayToSelect = "3";           // selected day from calendar
-		String timeToSelect = "18:00";       // selected time from dropdown
+		int useCaseIndex =getData.useCaseIndex;
+		String dayToSelect =getData.dayToSelect;           // selected day from calendar
+		String timeToSelect = getData.timeToSelect;       // selected time from dropdown
 
 		// Step 2: Current year/month for forming full selected date
 		int year = LocalDate.now().getYear();

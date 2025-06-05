@@ -26,6 +26,7 @@ public class body extends Login {
 	newcampaign createcamp = new newcampaign();
 	wfnp wfnp = new wfnp();
 	bodytext bodytext = new bodytext();
+	changes change = new changes();
     public final String expectedUrlBase = "https://apis.ifanow.com/futurewise/api/v2/web/whatsapp/campaign/create/template/onFly?";
 	
     @Test(priority = 1)
@@ -64,8 +65,8 @@ public class body extends Login {
 //	    ((JavascriptExecutor) driver).executeScript("arguments[0].click();", addVariable);
 //		Thread.sleep(1000);
 		WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(10));
-		int totalDropdowns = 10; // Total number of dropdowns, adjust as needed
-		int startingOptionIndex = 1;
+		int totalDropdowns =change.totalDropdowns; // Total number of dropdowns, adjust as needed
+		int startingOptionIndex = change.startingOptionIndex;
 
 		// First, execute the process to update the body text
 		for (int i = 0; i < totalDropdowns; i++) {
@@ -192,36 +193,36 @@ public class body extends Login {
 		            case 30:
 		                updatedText = updatedText.replaceFirst("\\{\\{30\\}\\}", selectedText + " - {{30}}");
 		                break;
-		            case 31:
-		                updatedText = updatedText.replaceFirst("\\{\\{31\\}\\}", selectedText + " - {{31}}");
-		                break;
-		            case 32:
-		                updatedText = updatedText.replaceFirst("\\{\\{32\\}\\}", selectedText + " - {{32}}");
-		                break;
-		            case 33:
-		                updatedText = updatedText.replaceFirst("\\{\\{33\\}\\}", selectedText + " - {{33}}");
-		                break;
-		            case 34:
-		                updatedText = updatedText.replaceFirst("\\{\\{34\\}\\}", selectedText + " - {{34}}");
-		                break;
-		            case 35:
-		                updatedText = updatedText.replaceFirst("\\{\\{35\\}\\}", selectedText + " - {{35}}");
-		                break;
-		            case 36:
-		                updatedText = updatedText.replaceFirst("\\{\\{36\\}\\}", selectedText + " - {{36}}");
-		                break;
-		            case 37:
-		                updatedText = updatedText.replaceFirst("\\{\\{37\\}\\}", selectedText + " - {{37}}");
-		                break;
-		            case 38:
-		                updatedText = updatedText.replaceFirst("\\{\\{38\\}\\}", selectedText + " - {{38}}");
-		                break;
-		            case 39:
-		                updatedText = updatedText.replaceFirst("\\{\\{39\\}\\}", selectedText + " - {{39}}");
-		                break;
-		            case 40:
-		                updatedText = updatedText.replaceFirst("\\{\\{40\\}\\}", selectedText + " - {{40}}");
-		                break;
+//		            case 31:
+//		                updatedText = updatedText.replaceFirst("\\{\\{31\\}\\}", selectedText + " - {{31}}");
+//		                break;
+//		            case 32:
+//		                updatedText = updatedText.replaceFirst("\\{\\{32\\}\\}", selectedText + " - {{32}}");
+//		                break;
+//		            case 33:
+//		                updatedText = updatedText.replaceFirst("\\{\\{33\\}\\}", selectedText + " - {{33}}");
+//		                break;
+//		            case 34:
+//		                updatedText = updatedText.replaceFirst("\\{\\{34\\}\\}", selectedText + " - {{34}}");
+//		                break;
+//		            case 35:
+//		                updatedText = updatedText.replaceFirst("\\{\\{35\\}\\}", selectedText + " - {{35}}");
+//		                break;
+//		            case 36:
+//		                updatedText = updatedText.replaceFirst("\\{\\{36\\}\\}", selectedText + " - {{36}}");
+//		                break;
+//		            case 37:
+//		                updatedText = updatedText.replaceFirst("\\{\\{37\\}\\}", selectedText + " - {{37}}");
+//		                break;
+//		            case 38:
+//		                updatedText = updatedText.replaceFirst("\\{\\{38\\}\\}", selectedText + " - {{38}}");
+//		                break;
+//		            case 39:
+//		                updatedText = updatedText.replaceFirst("\\{\\{39\\}\\}", selectedText + " - {{39}}");
+//		                break;
+//		            case 40:
+//		                updatedText = updatedText.replaceFirst("\\{\\{40\\}\\}", selectedText + " - {{40}}");
+//		                break;
 		            // Add more cases if you have more placeholders to replace
 		        }
 

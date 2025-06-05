@@ -25,6 +25,7 @@ public class newcampaign extends Login{
 	 private static int campaignCounter = 1;
 	 public static String uniqueCampaignName = "";
 	 wfnp button = new wfnp();
+	 changes getData=new changes();
 @Test
 public void newCampaign() throws InterruptedException {
 	TestListeners.setDriver(driver);
@@ -321,6 +322,8 @@ public void newCampaign() throws InterruptedException {
 		}
  @Test
  public void schedule() throws InterruptedException {
+	 
+
 		TestListeners.setDriver(driver);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		driver.findElement(By.xpath("//span[contains(.,\"New Campaign\")]")).click();//new campaign
@@ -330,10 +333,10 @@ public void newCampaign() throws InterruptedException {
 	    }
 	    // Build the campaign nameC:\Users\HP\Documents\ifanow\whatsapp Apis\image.jpg
 		
-		int useCaseIndex = 31;
-		String dayToSelect = "3";           // selected day from calendar
-		String timeToSelect = "17:00";       // selected time from dropdown
-
+		int useCaseIndex =getData.useCaseIndex;
+		String dayToSelect =getData.dayToSelect;           // selected day from calendar
+		String timeToSelect = getData.timeToSelect;       // selected time from dropdown
+		
 		// Step 2: Current year/month for forming full selected date
 		int year = LocalDate.now().getYear();
 		int month = LocalDate.now().getMonthValue();
