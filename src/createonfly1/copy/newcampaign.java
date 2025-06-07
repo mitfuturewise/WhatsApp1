@@ -27,6 +27,9 @@ public class newcampaign extends Login{
 	 public static String uniqueCampaignName = "";
 	 wfnp button = new wfnp();
 	 changes getData=new changes();
+	 int useCaseIndex = getData.useCaseIndex;
+	    String dayToSelect = getData.dayToSelect;
+	    String timeToSelect = getData.timeToSelect;
 @Test
  public void newCampaign() throws InterruptedException {
 		TestListeners.setDriver(driver);
@@ -39,7 +42,7 @@ public class newcampaign extends Login{
 	    // Build the campaign name
 	    uniqueCampaignName = "Campaign_" + campaignCounter;
 	    campaignCounter++;
-	    int useCaseIndex = 31;
+	    
 	    // Locate the campaign input field and send the campaign name
 	    driver.findElement(By.xpath("//input[@aria-required='true']")).sendKeys(uniqueCampaignName);
 		driver.findElement(By.xpath("(//span[@class=\"mat-radio-inner-circle\"])[2]")).click();//select one time radio button
@@ -96,7 +99,7 @@ public static String generateUniqueTemplateName(int length) {
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("(//mat-select[@aria-required=\"true\"])[1]")).click();	//click dropdown button of  use case
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("(//span[@class=\"mat-option-text\"])[31]")).click();//select use case
+		driver.findElement(By.xpath("(//span[@class=\"mat-option-text\"])[" + useCaseIndex + "]")).click();//select use case
 //		Thread.sleep(1000);
 //		driver.findElement(By.xpath("(//input[@aria-required=\"true\"])")).click();//click on calender to select date
 		driver.findElement(By.xpath("(//button[contains(.,\"NEXT STEP\")])")).click();//click next step(use case selection)
@@ -143,7 +146,7 @@ public static String generateUniqueTemplateName(int length) {
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("(//mat-select[@aria-required=\"true\"])[1]")).click();	//click dropdown button of  use case
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("(//span[@class=\"mat-option-text\"])[2]")).click();//select use case
+		driver.findElement(By.xpath("(//span[@class=\"mat-option-text\"])[" + useCaseIndex + "]")).click();//select use case
 //		Thread.sleep(1000);
 //		driver.findElement(By.xpath("(//input[@aria-required=\"true\"])")).click();//click on calender to select date
 		driver.findElement(By.xpath("(//button[contains(.,\"NEXT STEP\")])")).click();//click next step(use case selection)

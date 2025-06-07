@@ -45,7 +45,8 @@ public class Useexistingclienttags extends Login{
 	header header = new header();
 	Buttons buttons = new Buttons();
 	devtools devtools = new devtools();
-	private final String expectedUrlBase = "https://apis.ifanow.com/futurewise/api/v2/web/whatsapp/campaign/create/template/onFly?";
+//  public final String expectedUrlBase = "https://apis.ifanow.com/futurewise/api/v2/web/whatsapp/campaign/create/template/onFly?";
+  public final String expectedUrlBase = "https://staging.ifanow.in/futurewise/api/v1/web/whatsapp/campaign/create/template/onFly?";
 
 		@Test(priority = 4)
 		public void Useexistingclienttags4() throws InterruptedException, AWTException {

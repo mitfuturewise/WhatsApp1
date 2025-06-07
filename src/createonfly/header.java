@@ -32,7 +32,8 @@ newcampaign createcamp = new newcampaign();
 wfnp wfnp = new wfnp();
 bodytext bodytext = new bodytext();
 devtools devtools = new devtools();
-private final String expectedUrlBase = "https://apis.ifanow.com/futurewise/api/v2/web/whatsapp/campaign/create/template/onFly?";
+//public final String expectedUrlBase = "https://apis.ifanow.com/futurewise/api/v2/web/whatsapp/campaign/create/template/onFly?";
+public final String expectedUrlBase = "https://staging.ifanow.in/futurewise/api/v1/web/whatsapp/campaign/create/template/onFly?";
 @Test(priority = 1)
 public void headerisselectedasnone() throws InterruptedException, AWTException {
 	TestListeners.setDriver(driver);

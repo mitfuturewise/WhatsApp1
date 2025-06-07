@@ -26,6 +26,9 @@ public class newcampaign extends Login{
 	 public static String uniqueCampaignName = "";
 	 wfnp button = new wfnp();
 	 changes getData=new changes();
+	 int useCaseIndex = getData.useCaseIndex;
+	    String dayToSelect = getData.dayToSelect;
+	    String timeToSelect = getData.timeToSelect;
 @Test
 public void newCampaign() throws InterruptedException {
 	TestListeners.setDriver(driver);
@@ -58,12 +61,12 @@ public void newCampaign() throws InterruptedException {
 	driver.findElement(By.xpath("//p[contains(text(),\"Modify Template\")]")).click();//modify template
 	Thread.sleep(1000);
 	//for template name
-	String templateName = generateUniqueTemplateName(20);
-    
-    // Locate the input field using the XPath and enter the unique template name
-    WebElement inputField = driver.findElement(By.xpath("//input[@formcontrolname='templateName']"));
-    inputField.clear();
-    inputField.sendKeys(templateName);
+//	String templateName = generateUniqueTemplateName(20);
+//    
+//    // Locate the input field using the XPath and enter the unique template name
+//    WebElement inputField = driver.findElement(By.xpath("//input[@formcontrolname='templateName']"));
+//    inputField.clear();
+//    inputField.sendKeys(templateName);
 }
  public static String generateUniqueTemplateName(int length) {
 	        String characters = "abdcf_54121s5d4ghjdfvdjshanb_jbdfbdsmvn6533d12f32hdfgjhsdf___hgdfnsdbf";
@@ -95,7 +98,7 @@ public void newCampaign() throws InterruptedException {
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("(//mat-select[@aria-required=\"true\"])[1]")).click();	//click dropdown button of  use case
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("(//span[@class=\"mat-option-text\"])[2]")).click();//select use case
+		driver.findElement(By.xpath("(//span[@class=\"mat-option-text\"])[" + useCaseIndex + "]")).click();//select use case
 //		Thread.sleep(1000);
 //		driver.findElement(By.xpath("(//input[@aria-required=\"true\"])")).click();//click on calender to select date
 		driver.findElement(By.xpath("(//button[contains(.,\"NEXT STEP\")])")).click();//click next step(use case selection)
@@ -105,12 +108,12 @@ public void newCampaign() throws InterruptedException {
 		driver.findElement(By.xpath("//p[contains(.,\"Create on the Fly\")]")).click();//click on create on fly
 		Thread.sleep(1000);
 		//for template name
-		String templateName = generateUniqueTemplateName(20);
-	    
-	    // Locate the input field using the XPath and enter the unique template name
-	    WebElement inputField = driver.findElement(By.xpath("//input[@formcontrolname='templateName']"));
-	    inputField.clear();
-	    inputField.sendKeys(templateName);
+//		String templateName = generateUniqueTemplateName(20);
+//	    
+//	    // Locate the input field using the XPath and enter the unique template name
+//	    WebElement inputField = driver.findElement(By.xpath("//input[@formcontrolname='templateName']"));
+//	    inputField.clear();
+//	    inputField.sendKeys(templateName);
 	}
  @Test
  public void Useexistingclienttags() throws InterruptedException {
@@ -132,7 +135,7 @@ public void newCampaign() throws InterruptedException {
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("(//mat-select[@aria-required=\"true\"])[1]")).click();	//click dropdown button of  use case
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("(//span[@class=\"mat-option-text\"])[2]")).click();//select use case
+		driver.findElement(By.xpath("(//span[@class=\"mat-option-text\"])[" + useCaseIndex + "]")).click();//select use case
 //		Thread.sleep(1000);
 //		driver.findElement(By.xpath("(//input[@aria-required=\"true\"])")).click();//click on calender to select date
 		driver.findElement(By.xpath("(//button[contains(.,\"NEXT STEP\")])")).click();//click next step(use case selection)
@@ -153,12 +156,12 @@ public void newCampaign() throws InterruptedException {
 		driver.findElement(By.xpath("//p[contains(text(),\"Modify Template\")]")).click();//modify template
 		Thread.sleep(1000);
 		//for template name
-		String templateName = generateUniqueTemplateName(20);
-	    
-	    // Locate the input field using the XPath and enter the unique template name
-	    WebElement inputField = driver.findElement(By.xpath("//input[@formcontrolname='templateName']"));
-	    inputField.clear();
-	    inputField.sendKeys(templateName);
+//		String templateName = generateUniqueTemplateName(20);
+//	    
+//	    // Locate the input field using the XPath and enter the unique template name
+//	    WebElement inputField = driver.findElement(By.xpath("//input[@formcontrolname='templateName']"));
+//	    inputField.clear();
+//	    inputField.sendKeys(templateName);
 		}
  @Test
  public void CreateTag() throws InterruptedException {
@@ -191,7 +194,7 @@ public void newCampaign() throws InterruptedException {
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("(//mat-select[@aria-required=\"true\"])[1]")).click();	//click dropdown button of  use case
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("(//span[@class=\"mat-option-text\"])[2]")).click();//select use case
+		driver.findElement(By.xpath("(//span[@class=\"mat-option-text\"])[" + useCaseIndex + "]")).click();//select use case
 //		Thread.sleep(1000);
 //		driver.findElement(By.xpath("(//input[@aria-required=\"true\"])")).click();//click on calender to select date
 		driver.findElement(By.xpath("(//button[contains(.,\"NEXT STEP\")])")).click();//click next step(use case selection)
@@ -313,12 +316,12 @@ public void newCampaign() throws InterruptedException {
           // ✅ Click using JavaScript (if normal click fails)
           ((JavascriptExecutor) driver).executeScript("arguments[0].click();", modifyTemplateButton);
 		//for template name
-		String templateName = generateUniqueTemplateName(20);
-	    
-	    // Locate the input field using the XPath and enter the unique template name
-	    WebElement inputField = driver.findElement(By.xpath("//input[@formcontrolname='templateName']"));
-	    inputField.clear();
-	    inputField.sendKeys(templateName);
+//		String templateName = generateUniqueTemplateName(20);
+//	    
+//	    // Locate the input field using the XPath and enter the unique template name
+//	    WebElement inputField = driver.findElement(By.xpath("//input[@formcontrolname='templateName']"));
+//	    inputField.clear();
+//	    inputField.sendKeys(templateName);
 		}
  @Test
  public void schedule() throws InterruptedException {
@@ -333,9 +336,9 @@ public void newCampaign() throws InterruptedException {
 	    }
 	    // Build the campaign nameC:\Users\HP\Documents\ifanow\whatsapp Apis\image.jpg
 		
-		int useCaseIndex =getData.useCaseIndex;
-		String dayToSelect =getData.dayToSelect;           // selected day from calendar
-		String timeToSelect = getData.timeToSelect;       // selected time from dropdown
+//		int useCaseIndex =getData.useCaseIndex;
+//		String dayToSelect =getData.dayToSelect;           // selected day from calendar
+//		String timeToSelect = getData.timeToSelect;       // selected time from dropdown
 		
 		// Step 2: Current year/month for forming full selected date
 		int year = LocalDate.now().getYear();
@@ -392,12 +395,12 @@ public void newCampaign() throws InterruptedException {
 		driver.findElement(By.xpath("//p[contains(text(),\"Modify Template\")]")).click();//modify template
 		Thread.sleep(1000);
 		//for template name
-		String templateName = generateUniqueTemplateName(20);
-	    
-	    // Locate the input field using the XPath and enter the unique template name
-	    WebElement inputField = driver.findElement(By.xpath("//input[@formcontrolname='templateName']"));
-	    inputField.clear();
-	    inputField.sendKeys(templateName);
+//		String templateName = generateUniqueTemplateName(20);
+//	    
+//	    // Locate the input field using the XPath and enter the unique template name
+//	    WebElement inputField = driver.findElement(By.xpath("//input[@formcontrolname='templateName']"));
+//	    inputField.clear();
+//	    inputField.sendKeys(templateName);
 		}
 // public void verifyAndPublishCampaign(WebDriver driver, String uniqueCampaignName) throws InterruptedException {
 //	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));

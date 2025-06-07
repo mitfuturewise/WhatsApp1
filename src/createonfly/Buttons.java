@@ -10,13 +10,14 @@ import org.testng.annotations.Test;
 
 	@Listeners(TestListeners.class)
 	public class Buttons extends Login {
-		public final String expectedUrlBase = "https://apis.ifanow.com/futurewise/api/v2/web/whatsapp/campaign/create/template/onFly?";
+//	    public final String expectedUrlBase = "https://apis.ifanow.com/futurewise/api/v2/web/whatsapp/campaign/create/template/onFly?";
+	    public final String expectedUrlBase = "https://staging.ifanow.in/futurewise/api/v1/web/whatsapp/campaign/create/template/onFly?";
 		public AtomicInteger responseStatus = new AtomicInteger(-1);
 		newcampaign createcamp = new newcampaign();
 		wfnp wfnp = new wfnp();
 		bodytext bodytext = new bodytext();
 		devtools devtools = new devtools();
-	    public final String expectedUrlBase1 = "https://staging.ifanow.in/futurewise/api/v2/web/whatsapp/campaign/create/template/onFly?";
+	  
 		
 	    @Test(priority = 1)
 		public void addwebsiteurl() throws InterruptedException, AWTException {
