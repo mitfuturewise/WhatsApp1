@@ -9,8 +9,8 @@ import org.testng.annotations.Test;
 public class changes extends Login{
 	
 	public int useCaseIndex = 1;
-	public String dayToSelect = "8";           // selected day from calendar
-	public String timeToSelect = "0:00";       // selected time from dropdown
+	public String dayToSelect = "2";           // selected day from calendar
+	public String timeToSelect = "17:00";       // selected time from dropdown
 
 	public String getImagePath() {
 		return "C:\\Users\\HP\\Documents\\ifanow\\whatsapp Apis\\port.jpg";

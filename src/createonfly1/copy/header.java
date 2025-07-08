@@ -26,15 +26,13 @@ import org.testng.Reporter;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import Whatsapp1.copy.TestListeners;
-import Whatsapp1.copy.changes;
 
 @Listeners(TestListeners.class)
 public class header extends Login{
 newcampaign createcamp = new newcampaign();
 wfnp wfnp = new wfnp();
 bodytext bodytext = new bodytext();
-changes change = new changes();
+changes change = new changes();  
 //public final String expectedUrlBase = "https://apis.ifanow.com/futurewise/api/v2/web/whatsapp/campaign/create/template/onFly?";
 public final String expectedUrlBase = "https://staging.ifanow.in/futurewise/api/v1/web/whatsapp/campaign/create/template/onFly?";
 @Test(priority = 1)
@@ -196,6 +194,7 @@ public void video1() throws InterruptedException, AWTException {
     // Press Enter to confirm the file upload.
     robot.keyPress(KeyEvent.VK_ENTER);
     Thread.sleep(1000);
+    
     robot.keyRelease(KeyEvent.VK_ENTER);
 }
 @Test(priority = 11)
@@ -219,7 +218,7 @@ public void document1() throws InterruptedException, AWTException {
 	StringSelection selection = new StringSelection( change.getDocPath());
     Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, null);
     
-    // Paste the file path: CTRL+VC:\Users\HP\Documents\ifanow\whatsapp Apis\document.pdf
+    // Paste the file path: CTRL+VC:\Users\HP\Documents\ifanow\whatsapp Apis\document.pdfC:\Users\HP\Documents\ifanow\whatsapp Apis\image.jpg
     
     
     robot.keyPress(KeyEvent.VK_CONTROL);
