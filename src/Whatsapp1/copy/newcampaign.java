@@ -23,7 +23,7 @@ import org.testng.annotations.Test;
 @Listeners(TestListeners.class)
 public class newcampaign extends Login{
 	private static int campaignCounter = 1;
-	 public static String uniqueCampaignName = "";
+	 public  String uniqueCampaignName = "";
 	 wfnp button = new wfnp();
 	 changes getData=new changes();
 	 int useCaseIndex = getData.useCaseIndex;
@@ -329,7 +329,7 @@ public void newCampaign() throws InterruptedException {
 //	    inputField.sendKeys(templateName);
 		}
  @Test
- public void schedule(String dayToSelect, String timeToSelect) throws InterruptedException {
+ public String schedule(String dayToSelect, String timeToSelect) throws InterruptedException {
 	 
 
 		TestListeners.setDriver(driver);
@@ -382,19 +382,30 @@ public void newCampaign() throws InterruptedException {
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("(//span[@class='mat-option-text'])[" + useCaseIndex + "]")).click();//select use case
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//span[@class=\"mat-slide-toggle-bar\"]")).click();//enable schedule
+		WebElement toggle = driver.findElement(By.xpath("//span[@class='mat-slide-toggle-bar']"));
+
+		// Scroll into view first using JavaScript
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", toggle);
+
+		// Small pause to allow scrolling to finish (optional but helps)
+		Thread.sleep(500);
+
+		// Then click it
+		toggle.click();
 		Thread.sleep(1000);
 //		String dayToSelect = "23"; // or any day
 		driver.findElement(By.xpath("//input[@formcontrolname='manualDate']")).click();
 		Thread.sleep(1000);
-		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".cdk-overlay-backdrop")));
+		WebElement dayButton = wait.until(ExpectedConditions.elementToBeClickable(
+			    By.xpath("//button[.//div[contains(@class,'mat-calendar-body-cell-content') and normalize-space(text())='" + dayToSelect + "'] and not(contains(@class, 'mat-calendar-body-disabled'))]")
+			));
+			dayButton.click();
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//div[contains(@class,'mat-calendar-body-cell-content') and normalize-space(text())='" + dayToSelect + "']")).click();
+		driver.findElement(By.xpath("//mat-select[@formcontrolname='manualTime']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//span[@class='mat-option-text' and normalize-space(text())='" + timeToSelect + "']")).click();
 //		driver.findElement(By.xpath("//mat-select[@formcontrolname=\"manualTime\"]")).click();
 		Thread.sleep(1000);
-//		driver.findElement(By.xpath("(//input[@aria-required=\"true\"])")).click();//click on calender to select date
 		driver.findElement(By.xpath("(//button[contains(.,\"NEXT STEP\")])")).click();//click next step(use case selection)
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("(//label[@class=\"mat-radio-label\"])[2]")).click();//select use existing client tags
@@ -412,6 +423,7 @@ public void newCampaign() throws InterruptedException {
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//p[contains(text(),\"Modify Template\")]")).click();//modify template
 		Thread.sleep(1000);
+		 return uniqueCampaignName;
 		//for template name
 //		String templateName = generateUniqueTemplateName(20);
 //	    
@@ -531,6 +543,11 @@ public void newCampaign() throws InterruptedException {
 //
 //	    System.out.println("Campaign is no longer in Draft. Final status: " + statusText);
 //	}
+ @Test
+ public void runScheduleAndVerify() throws InterruptedException {
+     String campaignName = schedule(dayToSelect, timeToSelect);  // ✅ create campaign and get name
+     verifyAndPublishCampaign(driver, campaignName);  // ✅ verify using name
+ }
  public void verifyAndPublishCampaign(WebDriver driver, String uniqueCampaignName) throws InterruptedException {
 	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 	    JavascriptExecutor js = (JavascriptExecutor) driver;

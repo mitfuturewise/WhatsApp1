@@ -17,5 +17,6 @@
 	<classpathentry kind="lib" path="C:/Users/HP/Downloads/browsermob-proxy-2.1.4-bin/browsermob-proxy-2.1.4/browsermob-rest-2.1.4-javadoc.jar"/>
 	<classpathentry kind="lib" path="C:/Users/HP/Downloads/browsermob-proxy-2.1.4-bin/browsermob-proxy-2.1.4/browsermob-rest-2.1.4-sources.jar"/>
 	<classpathentry kind="lib" path="C:/Users/HP/Downloads/browsermob-proxy-2.1.4-bin/browsermob-proxy-2.1.4/lib/browsermob-dist-2.1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/HP/Documents/libraries/selenium-devtools-v138-4.34.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

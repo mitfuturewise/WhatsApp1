@@ -313,17 +313,23 @@ public static String generateUniqueTemplateName(int length) {
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("(//span[@class='mat-option-text'])[" + useCaseIndex + "]")).click();//select use case
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//span[@class=\"mat-slide-toggle-bar\"]")).click();//enable schedule
-		Thread.sleep(1000);
-		driver.findElement(By.xpath("//input[@formcontrolname=\"manualDate\"]")).click();
-		Thread.sleep(1000);
-//		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@class=\"cdk-overlay-container\"]")));
-		driver.findElement(By.xpath("//div[contains(@class,'mat-calendar-body-cell-content') and normalize-space(text())='" + dayToSelect + "']")).click();
+		WebElement toggle = driver.findElement(By.xpath("//span[@class='mat-slide-toggle-bar']"));
+
+		// Scroll into view first using JavaScript
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", toggle);
+
+		// Small pause to allow scrolling to finish (optional but helps)
+		Thread.sleep(500);
+
+		// Then click it
+		toggle.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//input[@formcontrolname='manualDate']")).click();
-//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@class=\"cdk-overlay-container\"]")));
-		driver.findElement(By.xpath("//div[contains(@class,'mat-calendar-body-cell-content') and normalize-space(text())='" + dayToSelect + "']")).click();
+		Thread.sleep(1000);
+		WebElement dayButton = wait.until(ExpectedConditions.elementToBeClickable(
+			    By.xpath("//button[.//div[contains(@class,'mat-calendar-body-cell-content') and normalize-space(text())='" + dayToSelect + "'] and not(contains(@class, 'mat-calendar-body-disabled'))]")
+			));
+			dayButton.click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//mat-select[@formcontrolname='manualTime']")).click();
 		Thread.sleep(1000);

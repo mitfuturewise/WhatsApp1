@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 public class changes extends Login{
 	
 	public int useCaseIndex = 25;
-	public String dayToSelect = "8";           // selected day from calendar
+	public String dayToSelect = "9";           // selected day from calendar
 	public String timeToSelect = "18:00";       // selected time from dropdown
 	public int totalDropdowns = 11; // Total number of dropdowns, adjust as needed
 	public int startingOptionIndex = 91;
