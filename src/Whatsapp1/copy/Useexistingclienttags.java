@@ -41,15 +41,15 @@ public class Useexistingclienttags extends Login{
 	body body = new body();
 	header header = new header();
 	Buttons buttons = new Buttons();
-	devtools devtools = new devtools();
 	changes getData=new changes();
+	devtools devtools = new devtools(getData);
 	int useCaseIndex = getData.useCaseIndex;
 	String dayToSelect =getData.dayToSelect;           // selected day from calendar
 	String timeToSelect = getData.timeToSelect;
 	
 	
 //  public final String expectedUrlBase = "https://apis.ifanow.com/futurewise/api/v2/web/whatsapp/campaign/create/template/onFly?";
-  public final String expectedUrlBase = "https://staging.ifanow.in/futurewise/api/v1/web/whatsapp/campaign/create/template/onFly?";
+//  public final String expectedUrlBase = "https://staging.ifanow.in/futurewise/api/v1/web/whatsapp/campaign/create/template/onFly?";
 	
 		
 	@Test(priority = 4)
@@ -57,89 +57,74 @@ public class Useexistingclienttags extends Login{
 		TestListeners.setDriver(driver);
 		wfnp.whatsapp();
 		Thread.sleep(1000);
-		createcamp.newCampaign();
+		createcamp.Useexistingclienttags(dayToSelect, timeToSelect);
 		Thread.sleep(1000);
 		header.wheaderisselectedasnone();
 		Thread.sleep(1000);
 		devtools.devtools();
 		Thread.sleep(1000);
-		String generatedCampaignName = createcamp.schedule(dayToSelect, timeToSelect);
-		Thread.sleep(1000);
-		createcamp.verifyAndPublishCampaign(driver, generatedCampaignName); // pass by instance
+		createcamp.verifyAndPublishCampaign(driver, createcamp.uniqueCampaignName); // pass by instance
 		
 		wfnp.whatsapp();
 		Thread.sleep(1000);
-		createcamp.newCampaign();
+		createcamp.Useexistingclienttags(dayToSelect, timeToSelect);
 		Thread.sleep(1000);
 		header.wHeaderTextandAddVariablewithselectdapointandfallbackvalue();
 		Thread.sleep(1000);
 		devtools.devtools();
 		Thread.sleep(1000);
-		String generatedCampaignName = createcamp.schedule(dayToSelect, timeToSelect);
-		Thread.sleep(1000);
-		createcamp.verifyAndPublishCampaign(driver, generatedCampaignName); // pass by instance
+		createcamp.verifyAndPublishCampaign(driver, createcamp.uniqueCampaignName); // pass by instance
 		
 		wfnp.whatsapp();
 		Thread.sleep(1000);
-		createcamp.newCampaign();
+		createcamp.Useexistingclienttags(dayToSelect, timeToSelect);
 		Thread.sleep(1000);
 		header.wimage1();
 		Thread.sleep(1000);
 		devtools.devtools();
 		Thread.sleep(1000);	
-		String generatedCampaignName = createcamp.schedule(dayToSelect, timeToSelect);
-		Thread.sleep(1000);
+		createcamp.verifyAndPublishCampaign(driver, createcamp.uniqueCampaignName); // pass by instance
+		
 		
 		wfnp.whatsapp();
 		Thread.sleep(1000);
-		createcamp.newCampaign();
+		createcamp.Useexistingclienttags(dayToSelect, timeToSelect);
 		Thread.sleep(1000);
 		header.wdocument1();
 		Thread.sleep(1000);
 		devtools.devtools();
 		Thread.sleep(1000);
-		String generatedCampaignName = createcamp.schedule(dayToSelect, timeToSelect);
-		Thread.sleep(1000);
+		createcamp.verifyAndPublishCampaign(driver, createcamp.uniqueCampaignName); // pass by instance
 		
 		wfnp.whatsapp();
 		Thread.sleep(1000);
-		createcamp.newCampaign();
+		createcamp.Useexistingclienttags(dayToSelect, timeToSelect);
 		Thread.sleep(1000);
 		header.wvideo1();
 		Thread.sleep(1000);
 		devtools.devtools();
 		Thread.sleep(1000);	
-		String generatedCampaignName = createcamp.schedule(dayToSelect, timeToSelect);
-		Thread.sleep(1000);
-		
-	
-		
-		
-		
-		
+		createcamp.verifyAndPublishCampaign(driver, createcamp.uniqueCampaignName); // pass by instance
 
 		wfnp.whatsapp();
 		Thread.sleep(1000);
-		createcamp.schedule(dayToSelect, timeToSelect);
+		createcamp.Useexistingclienttags(dayToSelect, timeToSelect);
 		Thread.sleep(1000);
 		header.wheaderisselectedasnone();
 		Thread.sleep(1000);
 		devtools.devtools();
 		Thread.sleep(1000);
-		String generatedCampaignName = createcamp.schedule(dayToSelect, timeToSelect);
-		Thread.sleep(1000);
-		createcamp.verifyAndPublishCampaign(driver, generatedCampaignName);
+		createcamp.verifyAndPublishCampaign(driver, createcamp.uniqueCampaignName); // pass by instance
 
 		wfnp.whatsapp();
 		Thread.sleep(1000);
-		createcamp.schedule(dayToSelect, timeToSelect);
+		createcamp.Useexistingclienttags(dayToSelect, timeToSelect);
 		Thread.sleep(1000);
 		header.wHeaderTextandAddVariablewithselectdapointandfallbackvalue();
 		Thread.sleep(1000);
 		devtools.devtools();
 		Thread.sleep(1000);
-		String generatedCampaignName = createcamp.schedule(dayToSelect, timeToSelect);
-		Thread.sleep(1000);
+		createcamp.verifyAndPublishCampaign(driver, createcamp.uniqueCampaignName); // pass by instance
 		
 		wfnp.whatsapp();
 		Thread.sleep(1000);
@@ -149,8 +134,7 @@ public class Useexistingclienttags extends Login{
 		Thread.sleep(1000);
 		devtools.devtools();
 		Thread.sleep(1000);	
-		String generatedCampaignName = createcamp.schedule(dayToSelect, timeToSelect);
-		Thread.sleep(1000);
+		createcamp.verifyAndPublishCampaign(driver, createcamp.uniqueCampaignName); // pass by instance
 		
 		wfnp.whatsapp();
 		Thread.sleep(1000);
@@ -160,8 +144,7 @@ public class Useexistingclienttags extends Login{
 		Thread.sleep(1000);
 		devtools.devtools();
 		Thread.sleep(1000);
-		String generatedCampaignName = createcamp.schedule(dayToSelect, timeToSelect);
-		Thread.sleep(1000);
+		createcamp.verifyAndPublishCampaign(driver, createcamp.uniqueCampaignName); // pass by instance
 		
 		wfnp.whatsapp();
 		Thread.sleep(1000);
@@ -171,8 +154,7 @@ public class Useexistingclienttags extends Login{
 		Thread.sleep(1000);
 		devtools.devtools();
 		Thread.sleep(1000);	
-		String generatedCampaignName = createcamp.schedule(dayToSelect, timeToSelect);
-		Thread.sleep(1000);
+		createcamp.verifyAndPublishCampaign(driver, createcamp.uniqueCampaignName); // pass by instance
 		
 		
 		

@@ -9,10 +9,11 @@ import org.testng.annotations.Test;
 public class changes extends Login{
 	
 	public int useCaseIndex = 25;
-	public String dayToSelect = "9";           // selected day from calendar
+	public String dayToSelect = "10";           // selected day from calendar
 	public String timeToSelect = "18:00";       // selected time from dropdown
 	public int totalDropdowns = 11; // Total number of dropdowns, adjust as needed
 	public int startingOptionIndex = 91;
+	public String expectedUrlBase;
 
 	public String getImagePath() {
 //        return "C:\\Users\\HP\\Documents\\ifanow\\whatsapp Apis\\16mb im,age port.jpg";//16mb 
@@ -31,4 +32,7 @@ public class changes extends Login{
         return "C:\\Users\\HP\\Documents\\ifanow\\whatsapp Apis\\cas.pdf";//5mb
         
 }
+	public changes() {
+        this.expectedUrlBase = "https://apis.ifanow.com/futurewise/api/v2/web/whatsapp/campaign/create/template/onFly?";
+    }
 }

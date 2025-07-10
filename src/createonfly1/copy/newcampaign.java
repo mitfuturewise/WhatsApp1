@@ -24,13 +24,13 @@ import org.testng.annotations.Test;
 @Listeners(TestListeners.class)
 public class newcampaign extends Login{
 	 private static int campaignCounter = 1;
-	 public static String uniqueCampaignName = "";
+	 public  String uniqueCampaignName = "";
 	 wfnp button = new wfnp();
 	 changes getData=new changes();
 	 int useCaseIndex = getData.useCaseIndex;
 	    String dayToSelect = getData.dayToSelect;
 	    String timeToSelect = getData.timeToSelect;
-	    public static String generateCampaignName(int campaignCounter, String dayToSelect, String timeToSelect) {
+	    public String generateCampaignName(int campaignCounter, String dayToSelect, String timeToSelect) {
 	        // Step 2: Current year/month for forming full selected date
 	        int year = LocalDate.now().getYear();
 	        int month = LocalDate.now().getMonthValue();
@@ -48,18 +48,19 @@ public class newcampaign extends Login{
 	        return uniqueCampaignName;
 	    }
 @Test
- public void newCampaign() throws InterruptedException {
+ public String newCampaign(String dayToSelect, String timeToSelect) throws InterruptedException {
 		TestListeners.setDriver(driver);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		driver.findElement(By.xpath("//span[contains(.,\"New Campaign\")]")).click();//new campaign
 		//enter campaign name
-		String uniqueCampaignName = newcampaign.generateCampaignName(campaignCounter, dayToSelect, timeToSelect);
+		String generatedName = generateCampaignName(campaignCounter, dayToSelect, timeToSelect);
 	     
 	     // Increase the campaign counter after each generation
 	     campaignCounter++;
+	     this.uniqueCampaignName = generatedName; 
 	    
 	    // Locate the campaign input field and send the campaign name
-	    driver.findElement(By.xpath("//input[@aria-required='true']")).sendKeys(uniqueCampaignName);
+	    driver.findElement(By.xpath("//input[@aria-required='true']")).sendKeys(generatedName);
 		driver.findElement(By.xpath("(//span[@class=\"mat-radio-inner-circle\"])[2]")).click();//select one time radio button
 		driver.findElement(By.xpath("(//button[contains(text(),\"NEXT STEP\")])")).click();//click on next step
 		Thread.sleep(1000);
@@ -82,6 +83,7 @@ public class newcampaign extends Login{
 	    inputField.clear();
 	    inputField.sendKeys(templateName);
 	    Thread.sleep(1000);
+	    return generatedName;
 	    
 	}
 public static String generateUniqueTemplateName(int length) {
@@ -95,14 +97,15 @@ public static String generateUniqueTemplateName(int length) {
     return sb.toString();
 }
  @Test
- public void Useexistingclienttags() throws InterruptedException {
+ public String Useexistingclienttags(String dayToSelect, String timeToSelect) throws InterruptedException {
 		TestListeners.setDriver(driver);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		driver.findElement(By.xpath("//span[contains(.,\"New Campaign\")]")).click();//new campaign
-		String uniqueCampaignName = newcampaign.generateCampaignName(campaignCounter, dayToSelect, timeToSelect);
+		String generatedName = generateCampaignName(campaignCounter, dayToSelect, timeToSelect);
 	     
 	     // Increase the campaign counter after each generation
 	     campaignCounter++;
+	     this.uniqueCampaignName = generatedName; 
 	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(25));
 	    // Locate the campaign input field and send the campaign name
 	    driver.findElement(By.xpath("//input[@aria-required='true']")).sendKeys(uniqueCampaignName);
@@ -137,6 +140,7 @@ public static String generateUniqueTemplateName(int length) {
 	    WebElement inputField = driver.findElement(By.xpath("//input[@formcontrolname='templateName']"));
 	    inputField.clear();
 	    inputField.sendKeys(templateName);
+	    return generatedName;
 		}
  @Test
  public void CreateTag() throws InterruptedException {
@@ -144,7 +148,7 @@ public static String generateUniqueTemplateName(int length) {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		driver.findElement(By.xpath("//span[contains(.,\"New Campaign\")]")).click();//new campaign
 		//enter campaign name
-		String uniqueCampaignName = newcampaign.generateCampaignName(campaignCounter, dayToSelect, timeToSelect);
+		String uniqueCampaignName = generateCampaignName(campaignCounter, dayToSelect, timeToSelect);
 	     
 	     // Increase the campaign counter after each generation
 	     campaignCounter++;
@@ -289,7 +293,7 @@ public static String generateUniqueTemplateName(int length) {
 	    inputField.sendKeys(templateName);
 		}
  @Test
- public void schedule(String dayToSelect, String timeToSelect) throws InterruptedException {
+ public String schedule(String dayToSelect, String timeToSelect) throws InterruptedException {
 		TestListeners.setDriver(driver);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		driver.findElement(By.xpath("//span[contains(.,\"New Campaign\")]")).click();//new campaign
@@ -299,8 +303,8 @@ public static String generateUniqueTemplateName(int length) {
         String formattedSelectedDate = String.format("%04d-%02d-%02d", year, month, Integer.parseInt(dayToSelect)); // e.g., 2025-05-23
         String formattedSelectedTime = timeToSelect.replace(":", "");  // e.g., 1600
         String currentTime = LocalTime.now().format(DateTimeFormatter.ofPattern("HHmm")); // e.g., 1542
-		String uniqueCampaignName = "Campaign_" + campaignCounter + "_" + formattedSelectedDate + "_" + formattedSelectedTime + "_current" + currentTime + "Schedule";
-
+		String generatedName = "Campaign_" + campaignCounter + "_" + formattedSelectedDate + "_" + formattedSelectedTime + "_current" + currentTime + "Schedule";
+		uniqueCampaignName = generatedName;
         // Increase the campaign counter after each generation
         campaignCounter++;
 	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(25));
@@ -367,9 +371,13 @@ public static String generateUniqueTemplateName(int length) {
 	    WebElement inputField = driver.findElement(By.xpath("//input[@formcontrolname='templateName']"));
 	    inputField.clear();
 	    inputField.sendKeys(templateName);
-        
+        return generatedName;
 		}
-
+ @Test
+ public void runScheduleAndVerify() throws InterruptedException {
+     String campaignName = schedule(dayToSelect, timeToSelect);  // ✅ create campaign and get name
+     verifyAndPublishCampaign(driver, campaignName);  // ✅ verify using name
+ }
  public void verifyAndPublishCampaign(WebDriver driver, String uniqueCampaignName) throws InterruptedException {
 	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 	    JavascriptExecutor js = (JavascriptExecutor) driver;

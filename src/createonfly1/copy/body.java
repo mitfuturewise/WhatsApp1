@@ -27,8 +27,8 @@ public class body extends Login {
 	wfnp wfnp = new wfnp();
 	bodytext bodytext = new bodytext();
 	changes change = new changes();
-//  public final String expectedUrlBase = "https://apis.ifanow.com/futurewise/api/v2/web/whatsapp/campaign/create/template/onFly?";
-  public final String expectedUrlBase = "https://staging.ifanow.in/futurewise/api/v1/web/whatsapp/campaign/create/template/onFly?";
+  public final String expectedUrlBase = "https://apis.ifanow.com/futurewise/api/v2/web/whatsapp/campaign/create/template/onFly?";
+//  public final String expectedUrlBase = "https://staging.ifanow.in/futurewise/api/v1/web/whatsapp/campaign/create/template/onFly?";
 	
     @Test(priority = 1)
 	public void addvariable() throws InterruptedException, AWTException {

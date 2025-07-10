@@ -32,9 +32,12 @@ public class header extends Login{
 newcampaign createcamp = new newcampaign();
 wfnp wfnp = new wfnp();
 bodytext bodytext = new bodytext();
-changes change = new changes();  
-//public final String expectedUrlBase = "https://apis.ifanow.com/futurewise/api/v2/web/whatsapp/campaign/create/template/onFly?";
-public final String expectedUrlBase = "https://staging.ifanow.in/futurewise/api/v1/web/whatsapp/campaign/create/template/onFly?";
+changes getData = new changes();  
+int useCaseIndex = getData.useCaseIndex;
+String dayToSelect =getData.dayToSelect;           // selected day from calendar
+String timeToSelect = getData.timeToSelect;
+public final String expectedUrlBase = "https://apis.ifanow.com/futurewise/api/v2/web/whatsapp/campaign/create/template/onFly?";
+//public final String expectedUrlBase = "https://staging.ifanow.in/futurewise/api/v1/web/whatsapp/campaign/create/template/onFly?";
 @Test(priority = 1)
 public void headerisselectedasnone() throws InterruptedException, AWTException {
 	TestListeners.setDriver(driver);
@@ -128,7 +131,7 @@ public void image() throws InterruptedException {
 	TestListeners.setDriver(driver);
 	wfnp.whatsapp();
 	Thread.sleep(1000);
-	createcamp.newCampaign();
+	createcamp.newCampaign(dayToSelect, timeToSelect);
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	driver.findElement(By.xpath("(//mat-select[@aria-disabled='false'])[2]")).click();//select header dropdown
 	Thread.sleep(1000);
@@ -144,7 +147,7 @@ public void image1() throws InterruptedException, AWTException {
 	Thread.sleep(1000);
 	driver.findElement(By.xpath("//button[contains(.,\"Upload\")]")).click();
 	Robot robot = new Robot();
-	StringSelection selection = new StringSelection( change.getImagePath());
+	StringSelection selection = new StringSelection( getData.getImagePath());
     Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, null);
     
     // Paste the file path: CTRL+V
@@ -179,7 +182,7 @@ public void video1() throws InterruptedException, AWTException {
 	Thread.sleep(1000);
 	driver.findElement(By.xpath("//button[contains(.,\"Upload\")]")).click();
 	Robot robot = new Robot();
-	StringSelection selection = new StringSelection(change.getVideoPath());
+	StringSelection selection = new StringSelection(getData.getVideoPath());
     Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, null);
     
     // Paste the file path: CTRL+V
@@ -215,7 +218,7 @@ public void document1() throws InterruptedException, AWTException {
 	Thread.sleep(1000);
 	driver.findElement(By.xpath("//button[contains(.,\"Upload\")]")).click();
 	Robot robot = new Robot();
-	StringSelection selection = new StringSelection( change.getDocPath());
+	StringSelection selection = new StringSelection( getData.getDocPath());
     Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, null);
     
     // Paste the file path: CTRL+VC:\Users\HP\Documents\ifanow\whatsapp Apis\document.pdfC:\Users\HP\Documents\ifanow\whatsapp Apis\image.jpg
